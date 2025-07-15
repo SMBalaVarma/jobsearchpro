@@ -52,17 +52,13 @@ const Navbar = () => {
             e.preventDefault();
             scrollToTop();
           }}
-          aria-label="Pulse Robot"
+          aria-label="JobSearch Pro"
         >
-          <img 
-            src="/logo.svg" 
-            alt="Pulse Robot Logo" 
-            className="h-7 sm:h-8" 
-          />
+          <div className="text-xl font-display font-bold text-pulse-600">JobSearch Pro</div>
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex space-x-8">
+        <nav className="hidden md:flex items-center space-x-8">
           <a 
             href="#" 
             className="nav-link"
@@ -73,8 +69,13 @@ const Navbar = () => {
           >
             Home
           </a>
-          <a href="#features" className="nav-link">About</a>
-          <a href="#details" className="nav-link">Contact</a>
+          <a href="#jobs" className="nav-link">Browse Jobs</a>
+          <a href="#companies" className="nav-link">Companies</a>
+          <a href="#resources" className="nav-link">Resources</a>
+          <div className="flex items-center space-x-4 ml-4">
+            <button className="text-gray-700 hover:text-pulse-500 font-medium">Sign In</button>
+            <button className="bg-pulse-500 hover:bg-pulse-600 text-white px-4 py-2 rounded-full font-medium transition-colors">Post a Job</button>
+          </div>
         </nav>
 
         {/* Mobile menu button - increased touch target */}
@@ -92,7 +93,7 @@ const Navbar = () => {
         "fixed inset-0 z-40 bg-white flex flex-col pt-16 px-6 md:hidden transition-all duration-300 ease-in-out",
         isMenuOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full pointer-events-none"
       )}>
-        <nav className="flex flex-col space-y-8 items-center mt-8">
+        <nav className="flex flex-col space-y-6 items-center mt-8">
           <a 
             href="#" 
             className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
@@ -106,25 +107,39 @@ const Navbar = () => {
             Home
           </a>
           <a 
-            href="#features" 
+            href="#jobs" 
             className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
             onClick={() => {
               setIsMenuOpen(false);
               document.body.style.overflow = '';
             }}
           >
-            About
+            Browse Jobs
           </a>
           <a 
-            href="#details" 
+            href="#companies" 
             className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
             onClick={() => {
               setIsMenuOpen(false);
               document.body.style.overflow = '';
             }}
           >
-            Contact
+            Companies
           </a>
+          <a 
+            href="#resources" 
+            className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
+            onClick={() => {
+              setIsMenuOpen(false);
+              document.body.style.overflow = '';
+            }}
+          >
+            Resources
+          </a>
+          <div className="flex flex-col space-y-4 w-full pt-6 border-t border-gray-200">
+            <button className="text-lg font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100">Sign In</button>
+            <button className="bg-pulse-500 hover:bg-pulse-600 text-white text-lg font-medium py-3 px-6 w-full text-center rounded-lg">Post a Job</button>
+          </div>
         </nav>
       </div>
     </header>
