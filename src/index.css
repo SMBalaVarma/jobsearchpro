@@ -184,7 +184,7 @@
   }
 
   .feature-card {
-    @apply modern-card cursor-pointer;
+    @apply modern-card group cursor-pointer;
   }
   
   .button-primary {
