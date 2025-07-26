@@ -63,20 +63,20 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-			// Professional color palette
-			brand: {
-				"50": "#f0f4ff",
-				"100": "#e0e7ff",
-				"200": "#c7d2fe",
-				"300": "#a5b4fc", 
-				"400": "#818cf8",
-				"500": "#6366f1", // Primary brand color
-				"600": "#4f46e5",
-				"700": "#4338ca",
-				"800": "#3730a3",
-				"900": "#312e81",
-				"950": "#1e1b4b",
-			},
+				// Custom colors for JobSearch Pro
+				pulse: {
+					"50": "#fff7ed",
+					"100": "#ffedd5",
+					"200": "#fed7aa",
+					"300": "#fdba74",
+					"400": "#fb923c",
+					"500": "#f97316", // Primary orange
+					"600": "#ea580c",
+					"700": "#c2410c",
+					"800": "#9a3412",
+					"900": "#7c2d12",
+					"950": "#431407",
+				},
 				dark: {
 					"900": "#121212", // Almost black
 					"800": "#1e1e1e",
@@ -137,10 +137,9 @@ export default {
 				'float': 'float 6s ease-in-out infinite'
 			},
 			backgroundImage: {
-				'gradient-primary': 'var(--gradient-primary)',
-				'gradient-secondary': 'var(--gradient-secondary)', 
-				'gradient-hero': 'var(--gradient-hero)',
-				'noise': "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.4'/%3E%3C/svg%3E\")",
+				'hero-gradient': 'linear-gradient(90deg, hsla(24, 100%, 83%, 1) 0%, hsla(341, 91%, 68%, 1) 100%)',
+				'hero-gradient-2': 'linear-gradient(90deg, hsla(39, 100%, 77%, 1) 0%, hsla(22, 90%, 57%, 1) 100%)',
+				'pulse-gradient': 'linear-gradient(180deg, rgba(249,115,22,0.8) 0%, rgba(249,115,22,0) 100%)',
 			},
 			fontFamily: {
 				'sans': ['Inter', 'sans-serif'],
@@ -149,14 +148,8 @@ export default {
 				'playfair': ['"Playfair Display"', 'serif'],
 			},
 			boxShadow: {
-				'elegant': 'var(--shadow-lg)',
-				'elegant-hover': 'var(--shadow-xl)',
-				'glow': 'var(--shadow-glow)',
-			},
-			spacing: {
-				'18': '4.5rem',
-				'88': '22rem',
-				'128': '32rem',
+				'elegant': '0 4px 20px rgba(0, 0, 0, 0.08)',
+				'elegant-hover': '0 8px 30px rgba(0, 0, 0, 0.12)',
 			}
 		}
 	},

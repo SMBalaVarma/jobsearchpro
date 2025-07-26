@@ -54,7 +54,7 @@ const Navbar = () => {
           }}
           aria-label="JobSearch Pro"
         >
-          <div className="text-2xl font-display font-bold text-gradient">JobSearch Pro</div>
+          <div className="text-xl font-display font-bold text-pulse-600">JobSearch Pro</div>
         </a>
 
         {/* Desktop Navigation */}
@@ -72,9 +72,9 @@ const Navbar = () => {
           <a href="#jobs" className="nav-link">Browse Jobs</a>
           <a href="#companies" className="nav-link">Companies</a>
           <a href="#resources" className="nav-link">Resources</a>
-          <div className="flex items-center space-x-4 ml-8">
-            <button className="nav-link">Sign In</button>
-            <button className="button-primary">Post a Job</button>
+          <div className="flex items-center space-x-4 ml-4">
+            <button className="text-gray-700 hover:text-pulse-500 font-medium">Sign In</button>
+            <button className="bg-pulse-500 hover:bg-pulse-600 text-white px-4 py-2 rounded-full font-medium transition-colors">Post a Job</button>
           </div>
         </nav>
 
@@ -136,9 +136,9 @@ const Navbar = () => {
           >
             Resources
           </a>
-          <div className="flex flex-col space-y-4 w-full pt-6 border-t border-border">
-            <button className="button-secondary w-full">Sign In</button>
-            <button className="button-primary w-full">Post a Job</button>
+          <div className="flex flex-col space-y-4 w-full pt-6 border-t border-gray-200">
+            <button className="text-lg font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100">Sign In</button>
+            <button className="bg-pulse-500 hover:bg-pulse-600 text-white text-lg font-medium py-3 px-6 w-full text-center rounded-lg">Post a Job</button>
           </div>
         </nav>
       </div>

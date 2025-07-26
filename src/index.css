@@ -17,49 +17,35 @@
 
 @layer base {
   :root {
-    --background: 0 0% 98%;
-    --foreground: 210 22% 15%;
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
 
     --card: 0 0% 100%;
-    --card-foreground: 210 22% 15%;
+    --card-foreground: 222.2 84% 4.9%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 210 22% 15%;
+    --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 221 83% 53%;
-    --primary-foreground: 0 0% 98%;
+    --primary: 24 95% 53%;
+    --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 40% 98%;
-    --secondary-foreground: 210 22% 15%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
 
-    --muted: 220 14% 96%;
-    --muted-foreground: 220 9% 46%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 220 14% 96%;
-    --accent-foreground: 210 22% 15%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 220 13% 91%;
-    --input: 0 0% 100%;
-    --ring: 221 83% 53%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 24 95% 53%;
 
-    --radius: 0.75rem;
-    
-    /* Professional gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(221, 83%, 53%) 0%, hsl(262, 83%, 58%) 100%);
-    --gradient-secondary: linear-gradient(135deg, hsl(210, 40%, 98%) 0%, hsl(220, 14%, 96%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(221, 83%, 53%) 0%, hsl(262, 83%, 58%) 25%, hsl(293, 70%, 60%) 100%);
-    
-    /* Modern shadows */
-    --shadow-xs: 0 1px 2px 0 hsl(220 43% 11% / 0.05);
-    --shadow-sm: 0 1px 3px 0 hsl(220 43% 11% / 0.1), 0 1px 2px -1px hsl(220 43% 11% / 0.1);
-    --shadow-md: 0 4px 6px -1px hsl(220 43% 11% / 0.1), 0 2px 4px -2px hsl(220 43% 11% / 0.1);
-    --shadow-lg: 0 10px 15px -3px hsl(220 43% 11% / 0.1), 0 4px 6px -4px hsl(220 43% 11% / 0.1);
-    --shadow-xl: 0 20px 25px -5px hsl(220 43% 11% / 0.1), 0 8px 10px -6px hsl(220 43% 11% / 0.1);
-    --shadow-2xl: 0 25px 50px -12px hsl(220 43% 11% / 0.25);
-    --shadow-glow: 0 0 0 1px hsl(221 83% 53% / 0.05), 0 1px 3px 0 hsl(221 83% 53% / 0.1), 0 4px 6px 0 hsl(221 83% 53% / 0.1);
+    --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -116,8 +102,7 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    @apply bg-white text-black font-sans antialiased;
   }
 
   /* Smooth scrolling */
@@ -154,84 +139,43 @@
   }
 
   .job-chip {
-    @apply inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium bg-primary/10 text-primary border border-primary/20 transition-all duration-200 hover:bg-primary/20;
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-pulse-100 text-pulse-600 border border-pulse-200;
   }
   
   .section-container {
-    @apply max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-16 md:py-24;
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12;
   }
 
   .section-title {
-    @apply text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight text-foreground leading-[1.1];
+    @apply text-3xl md:text-4xl lg:text-5xl font-display font-bold tracking-tight;
   }
 
   .section-subtitle {
-    @apply text-xl md:text-2xl text-muted-foreground mt-6 max-w-4xl leading-relaxed;
-  }
-
-  .modern-card {
-    @apply bg-card border border-border rounded-2xl p-8 transition-all duration-300 hover:shadow-lg hover:border-primary/20 hover:-translate-y-1;
-    box-shadow: var(--shadow-sm);
-  }
-
-  .modern-card:hover {
-    box-shadow: var(--shadow-xl);
+    @apply text-lg md:text-xl text-gray-600 mt-4 max-w-3xl;
   }
 
   .glass-card {
-    @apply bg-card/80 backdrop-blur-xl border border-border/50 rounded-2xl transition-all duration-300;
-    box-shadow: var(--shadow-lg);
+    @apply bg-white/70 backdrop-blur-sm border border-white/20 rounded-2xl shadow-elegant transition-all duration-300 hover:shadow-elegant-hover;
   }
 
   .feature-card {
-    @apply modern-card group cursor-pointer;
+    @apply p-6 rounded-2xl transition-all duration-500 hover:translate-y-[-5px];
   }
   
   .button-primary {
-    @apply bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-primary/20 focus:ring-offset-2;
-    background: var(--gradient-primary);
-    box-shadow: var(--shadow-md);
-  }
-
-  .button-primary:hover {
-    box-shadow: var(--shadow-xl);
+    @apply bg-pulse-500 hover:bg-pulse-600 text-white font-medium py-3 px-6 rounded-full transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-[1.02] active:scale-[0.98];
   }
   
+  .search-bar {
+    @apply w-full px-4 py-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pulse-500 focus:border-transparent;
+  }
+
   .button-secondary {
-    @apply bg-secondary border border-border hover:border-primary text-foreground hover:text-primary font-semibold py-4 px-8 rounded-xl transition-all duration-300 hover:shadow-md;
-  }
-
-  .search-input {
-    @apply w-full px-6 py-4 bg-input border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 text-foreground placeholder:text-muted-foreground;
-    box-shadow: var(--shadow-xs);
-  }
-
-  .search-input:focus {
-    box-shadow: var(--shadow-glow);
+    @apply bg-transparent border border-gray-300 hover:border-pulse-500 text-gray-800 hover:text-pulse-500 font-medium py-3 px-6 rounded-full transition-all duration-300;
   }
   
   .nav-link {
-    @apply relative text-foreground/80 hover:text-primary py-2 px-1 transition-all duration-300 font-medium;
-  }
-
-  .nav-link::after {
-    @apply absolute bottom-0 left-0 h-0.5 w-0 bg-primary transition-all duration-300;
-    content: '';
-  }
-
-  .nav-link:hover::after {
-    @apply w-full;
-  }
-
-  .hero-gradient {
-    background: var(--gradient-hero);
-  }
-
-  .text-gradient {
-    background: var(--gradient-primary);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
+    @apply relative text-gray-800 hover:text-pulse-500 py-2 transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-pulse-500 after:transition-all hover:after:w-full;
   }
 }
 
