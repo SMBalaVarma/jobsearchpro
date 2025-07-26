@@ -2,10 +2,12 @@
 import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,6 +25,7 @@ const Navbar = () => {
   };
 
   const scrollToTop = () => {
+    navigate('/');
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
@@ -59,22 +62,13 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          <a 
-            href="#" 
-            className="nav-link"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToTop();
-            }}
-          >
-            Home
-          </a>
-          <a href="#jobs" className="nav-link">Browse Jobs</a>
-          <a href="#companies" className="nav-link">Companies</a>
-          <a href="#resources" className="nav-link">Resources</a>
+          <Link to="/" className="nav-link">Home</Link>
+          <Link to="/browse-jobs" className="nav-link">Browse Jobs</Link>
+          <Link to="/companies" className="nav-link">Companies</Link>
+          <Link to="/resources" className="nav-link">Resources</Link>
           <div className="flex items-center space-x-4 ml-4">
-            <button className="text-gray-700 hover:text-pulse-500 font-medium">Sign In</button>
-            <button className="bg-pulse-500 hover:bg-pulse-600 text-white px-4 py-2 rounded-full font-medium transition-colors">Post a Job</button>
+            <Link to="/sign-in" className="text-gray-700 hover:text-pulse-500 font-medium">Sign In</Link>
+            <Link to="/post-job" className="bg-pulse-500 hover:bg-pulse-600 text-white px-4 py-2 rounded-full font-medium transition-colors">Post a Job</Link>
           </div>
         </nav>
 
@@ -94,20 +88,18 @@ const Navbar = () => {
         isMenuOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full pointer-events-none"
       )}>
         <nav className="flex flex-col space-y-6 items-center mt-8">
-          <a 
-            href="#" 
+          <Link 
+            to="/" 
             className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToTop();
+            onClick={() => {
               setIsMenuOpen(false);
               document.body.style.overflow = '';
             }}
           >
             Home
-          </a>
-          <a 
-            href="#jobs" 
+          </Link>
+          <Link 
+            to="/browse-jobs" 
             className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
             onClick={() => {
               setIsMenuOpen(false);
@@ -115,9 +107,9 @@ const Navbar = () => {
             }}
           >
             Browse Jobs
-          </a>
-          <a 
-            href="#companies" 
+          </Link>
+          <Link 
+            to="/companies" 
             className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
             onClick={() => {
               setIsMenuOpen(false);
@@ -125,9 +117,9 @@ const Navbar = () => {
             }}
           >
             Companies
-          </a>
-          <a 
-            href="#resources" 
+          </Link>
+          <Link 
+            to="/resources" 
             className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
             onClick={() => {
               setIsMenuOpen(false);
@@ -135,10 +127,10 @@ const Navbar = () => {
             }}
           >
             Resources
-          </a>
+          </Link>
           <div className="flex flex-col space-y-4 w-full pt-6 border-t border-gray-200">
-            <button className="text-lg font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100">Sign In</button>
-            <button className="bg-pulse-500 hover:bg-pulse-600 text-white text-lg font-medium py-3 px-6 w-full text-center rounded-lg">Post a Job</button>
+            <Link to="/sign-in" className="text-lg font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100">Sign In</Link>
+            <Link to="/post-job" className="bg-pulse-500 hover:bg-pulse-600 text-white text-lg font-medium py-3 px-6 w-full text-center rounded-lg">Post a Job</Link>
           </div>
         </nav>
       </div>
