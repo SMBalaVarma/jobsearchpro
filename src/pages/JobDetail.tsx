@@ -4,6 +4,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import { 
   MapPin, 
   Clock, 
@@ -19,7 +21,8 @@ import {
   Linkedin,
   Phone,
   Mail,
-  Globe
+  Globe,
+  User
 } from "lucide-react";
 
 const JobDetail = () => {
@@ -34,24 +37,27 @@ const JobDetail = () => {
     type: "Full Time",
     salary: "$35k - $45k",
     posted: "11 hours ago",
-    logo: "in",
-    logoColor: "bg-red-600",
+    logo: "In",
+    logoColor: "bg-blue-600",
     featured: true,
     urgent: true,
     private: true,
-    description: "InVision is looking for a Product Designer to join our fast-growing, ambitious, product and data-driven team. You will help the team design beautiful interfaces that solve business challenges for our clients. We work with a number of Tier 1 banks on building web-based applications for AML, KYC and Sanctions List management workflows. This role is ideal if you are looking to propel your career into the FinTech or Big Data arena.",
+    description: "As a Product Designer, you will work within a Product Delivery Team tasked with UI, engineering, product and data talent. You will help the team design beautiful interfaces that solve business challenges for our clients. We work with a number of Tier 1 banks on building web-based applications for AML, KYC and Sanctions List management workflows. This role is ideal if you are looking to propel your career into the FinTech or Big Data arenas.",
     responsibilities: [
-      "Create wireframes, storyboards, user flows, process flows and site maps to effectively communicate interaction and design ideas",
-      "Present and defend designs and key milestone deliverables to peers and executive level stakeholders",
-      "Conduct user research and evaluate user feedback",
-      "Establish and promote design guidelines, best practices and standards"
+      "Be involved in every step of the product design cycle from discovery to developer handoff and user acceptance testing.",
+      "Work with BAs, product managers and tech teams to lead the Product Design.",
+      "Maintain quality of the design process and ensure that when designs are translated into code they accurately reflect the design specifications.",
+      "Accurately estimate design tickets during planning sessions.",
+      "Contribute to developing reusable UI components/style. Design and consider UI deliverables including sketch files, style guides, high fidelity wireframes, prototypes, micro interactions and pattern libraries.",
+      "Ensure design choices are data-led by identifying assumptions to test each sprint, and work with the analysts in your team to plan moderated usability test sessions.",
+      "Design pixel perfect responsive UI's and understand the underlying browser behavior and limitations.",
+      "Present your work to the wider business at Show & Tell sessions."
     ],
     skills: [
-      "2+ years of experience in product design",
-      "Proficiency in Figma, Sketch, Adobe Creative Suite",
-      "Strong understanding of user-centered design principles",
-      "Experience with responsive and mobile design",
-      "Knowledge of HTML/CSS is a plus"
+      "You have at least 3 years' experience working as a Product Designer.",
+      "You have experience using Sketch and Invision or Figma &",
+      "You have some previous experience working in an agile environment – Think two-week sprints.",
+      "You are familiar using Jira and Confluence in your workflow."
     ],
     tags: ["administrative", "android", "wordpress", "design", "react"],
     expirationDate: "April 06, 2021",
@@ -60,7 +66,7 @@ const JobDetail = () => {
     companySize: "501-1,000",
     founded: "2011",
     industry: "Software",
-    phone: "123 456 7890",
+    phone: "+123 456 7890",
     email: "info@invision.com",
     website: "www.invisionapp.com"
   };
@@ -70,10 +76,10 @@ const JobDetail = () => {
       id: 1,
       title: "Senior Full Stack Engineer, Creator Success",
       company: "MedHub",
-      location: "New York, NY",
+      location: "London, UK",
       type: "Full Time",
-      salary: "$80,000 - $120,000",
-      posted: "2 days ago",
+      salary: "$50k - $70k",
+      posted: "17 hours ago",
       logo: "M",
       logoColor: "bg-gray-900"
     },
@@ -81,10 +87,10 @@ const JobDetail = () => {
       id: 2,
       title: "Web Developer",
       company: "Figma",
-      location: "Remote",
-      type: "Contract",
-      salary: "$70,000 - $100,000",
-      posted: "1 day ago",
+      location: "London, UK",
+      type: "Full Time",
+      salary: "$30k - $50k",
+      posted: "17 hours ago",
       logo: "F",
       logoColor: "bg-orange-500"
     },
@@ -92,10 +98,10 @@ const JobDetail = () => {
       id: 3,
       title: "Sr. Full Stack Engineer",
       company: "Invision",
-      location: "San Francisco, CA",
+      location: "London, UK",
       type: "Full Time",
-      salary: "$90,000 - $130,000",
-      posted: "3 days ago",
+      salary: "$50k - $70k",
+      posted: "17 hours ago",
       logo: "W",
       logoColor: "bg-red-600"
     }
@@ -104,38 +110,27 @@ const JobDetail = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <Navbar />
-      
-      {/* Breadcrumb */}
-      <div className="border-b bg-white">
-        <div className="container mx-auto px-6 py-4">
-          <nav className="text-sm text-gray-600">
-            <Link to="/" className="hover:text-red-600">Home</Link> › 
-            <Link to="/browse-jobs" className="hover:text-red-600 ml-1">Find Jobs</Link> › 
-            <span className="text-gray-900 ml-1">{job.title}</span>
-          </nav>
-        </div>
-      </div>
 
       {/* Job Header */}
-      <div className="bg-white border-b">
+      <div className="bg-white">
         <div className="container mx-auto px-6 py-8">
           <div className="flex flex-col lg:flex-row gap-8">
             {/* Left Column - Job Info */}
             <div className="flex-1">
-              <div className="flex items-start gap-6">
+              <div className="flex items-start gap-6 mb-6">
                 {/* Company Logo */}
-                <div className={`w-20 h-20 ${job.logoColor} rounded-lg flex items-center justify-center text-white font-bold text-xl shrink-0`}>
+                <div className={`w-16 h-16 ${job.logoColor} rounded-lg flex items-center justify-center text-white font-bold text-lg shrink-0`}>
                   {job.logo}
                 </div>
 
                 {/* Job Details */}
                 <div className="flex-1">
-                  <h1 className="text-3xl font-bold text-gray-900 mb-2">{job.title}</h1>
+                  <h1 className="text-2xl font-bold text-gray-900 mb-3">{job.title}</h1>
                   
                   <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-4">
                     <div className="flex items-center gap-1">
                       <Building className="h-4 w-4" />
-                      <Link to="#" className="hover:text-red-600">{job.company}</Link>
+                      <Link to="#" className="hover:text-blue-600">{job.company}</Link>
                     </div>
                     <div className="flex items-center gap-1">
                       <MapPin className="h-4 w-4" />
@@ -153,23 +148,174 @@ const JobDetail = () => {
 
                   {/* Tags */}
                   <div className="flex flex-wrap gap-2">
-                    <Badge className="bg-red-600 text-white hover:bg-red-700">Full Time</Badge>
-                    <Badge className="bg-orange-500 text-white hover:bg-orange-600">Private</Badge>
-                    <Badge variant="secondary" className="bg-orange-50 text-orange-800 hover:bg-orange-100">Urgent</Badge>
+                    <Badge className="bg-blue-600 text-white hover:bg-blue-700">Full Time</Badge>
+                    <Badge className="bg-green-500 text-white hover:bg-green-600">Private</Badge>
+                    <Badge variant="secondary" className="bg-yellow-100 text-yellow-800 hover:bg-yellow-200">Urgent</Badge>
                   </div>
                 </div>
+              </div>
+
+              {/* Hero Image */}
+              <div className="mb-8">
+                <img 
+                  src="/lovable-uploads/059cbced-4a85-4f87-aa86-7a3a818a3647.png" 
+                  alt="Team collaboration" 
+                  className="w-full h-64 object-cover rounded-lg"
+                />
               </div>
             </div>
 
             {/* Right Column - Apply Button */}
             <div className="lg:w-80">
-              <div className="flex items-start gap-2">
-                <Button className="flex-1 bg-red-600 hover:bg-red-700 text-white">
+              <div className="flex items-start gap-2 mb-6">
+                <Button className="flex-1 bg-blue-600 hover:bg-blue-700 text-white">
                   Apply for job
                 </Button>
-                <Button variant="ghost" size="sm" className="text-gray-600 hover:text-red-600">
+                <Button variant="ghost" size="sm" className="text-gray-600 hover:text-blue-600">
                   <Heart className="h-5 w-5" />
                 </Button>
+              </div>
+
+              {/* Job Overview */}
+              <div className="bg-white rounded-lg border p-6 mb-6">
+                <h3 className="text-lg font-bold text-gray-900 mb-5">Job Overview</h3>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3">
+                    <Calendar className="h-4 w-4 text-blue-600" />
+                    <div className="flex-1">
+                      <span className="text-sm text-gray-600">Date Posted:</span>
+                      <p className="text-sm text-gray-900">Posted {job.posted}</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <CalendarX className="h-4 w-4 text-blue-600" />
+                    <div className="flex-1">
+                      <span className="text-sm text-gray-600">Expiration date:</span>
+                      <p className="text-sm text-gray-900">{job.expirationDate}</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <MapPin className="h-4 w-4 text-blue-600" />
+                    <div className="flex-1">
+                      <span className="text-sm text-gray-600">Location:</span>
+                      <p className="text-sm text-gray-900">{job.location}</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Briefcase className="h-4 w-4 text-blue-600" />
+                    <div className="flex-1">
+                      <span className="text-sm text-gray-600">Job Title:</span>
+                      <p className="text-sm text-gray-900">Designer</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Clock className="h-4 w-4 text-blue-600" />
+                    <div className="flex-1">
+                      <span className="text-sm text-gray-600">Hours:</span>
+                      <p className="text-sm text-gray-900">{job.hours}</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <DollarSign className="h-4 w-4 text-blue-600" />
+                    <div className="flex-1">
+                      <span className="text-sm text-gray-600">Rate:</span>
+                      <p className="text-sm text-gray-900">{job.rate}</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <DollarSign className="h-4 w-4 text-blue-600" />
+                    <div className="flex-1">
+                      <span className="text-sm text-gray-600">Salary:</span>
+                      <p className="text-sm text-gray-900">{job.salary}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Job Location */}
+              <div className="bg-white rounded-lg border p-6 mb-6">
+                <h3 className="text-lg font-bold text-gray-900 mb-4">Job Location</h3>
+                <div className="h-48 bg-blue-100 rounded-lg flex items-center justify-center relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-200 to-blue-300 rounded-lg opacity-50"></div>
+                  <div className="relative z-10 text-center">
+                    <MapPin className="h-8 w-8 text-blue-600 mx-auto mb-2" />
+                    <span className="text-gray-700 font-medium">{job.location}</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Job Skills */}
+              <div className="bg-white rounded-lg border p-6 mb-6">
+                <h3 className="text-lg font-bold text-gray-900 mb-4">Job Skills</h3>
+                <div className="flex flex-wrap gap-2">
+                  {job.tags.map((tag, index) => (
+                    <Badge key={index} variant="secondary" className="bg-gray-100 text-gray-700 hover:bg-gray-200">
+                      {tag}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+
+              {/* Company Profile */}
+              <div className="bg-white rounded-lg border p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className={`w-12 h-12 ${job.logoColor} rounded-lg flex items-center justify-center text-white font-semibold`}>
+                    {job.logo}
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-gray-900">{job.company}</h3>
+                    <Link to="#" className="text-sm text-blue-600 hover:text-blue-700">View company profile</Link>
+                  </div>
+                </div>
+                
+                <div className="space-y-3 text-sm">
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Primary Industry:</span>
+                    <span className="text-gray-900">{job.industry}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Company Size:</span>
+                    <span className="text-gray-900">{job.companySize}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Founded:</span>
+                    <span className="text-gray-900">{job.founded}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Phone:</span>
+                    <span className="text-gray-900">{job.phone}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Email:</span>
+                    <span className="text-gray-900">{job.email}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Location:</span>
+                    <span className="text-gray-900">{job.location}</span>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-2 mt-4 pt-4 border-t">
+                  <Button variant="ghost" size="sm" className="text-gray-600 hover:text-blue-600 w-8 h-8 p-0">
+                    <Facebook className="h-4 w-4" />
+                  </Button>
+                  <Button variant="ghost" size="sm" className="text-gray-600 hover:text-blue-600 w-8 h-8 p-0">
+                    <Twitter className="h-4 w-4" />
+                  </Button>
+                  <Button variant="ghost" size="sm" className="text-gray-600 hover:text-blue-600 w-8 h-8 p-0">
+                    <Instagram className="h-4 w-4" />
+                  </Button>
+                  <Button variant="ghost" size="sm" className="text-gray-600 hover:text-blue-600 w-8 h-8 p-0">
+                    <Linkedin className="h-4 w-4" />
+                  </Button>
+                </div>
+
+                <div className="mt-3">
+                  <a href={`https://${job.website}`} className="text-blue-600 hover:text-blue-700 text-sm flex items-center gap-1">
+                    <Globe className="h-4 w-4" />
+                    {job.website}
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -183,7 +329,7 @@ const JobDetail = () => {
           <div className="flex-1">
             {/* Job Description */}
             <div className="bg-white rounded-lg border p-6 mb-6">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">Job Description</h2>
+              <h2 className="text-xl font-bold text-gray-900 mb-4">Job Description</h2>
               <p className="text-gray-700 leading-relaxed">{job.description}</p>
             </div>
 
@@ -193,7 +339,7 @@ const JobDetail = () => {
               <ul className="space-y-3">
                 {job.responsibilities.map((responsibility, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 shrink-0"></div>
+                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 shrink-0"></div>
                     <span className="text-gray-700 leading-relaxed">{responsibility}</span>
                   </li>
                 ))}
@@ -206,7 +352,7 @@ const JobDetail = () => {
               <ul className="space-y-3">
                 {job.skills.map((skill, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 shrink-0"></div>
+                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 shrink-0"></div>
                     <span className="text-gray-700 leading-relaxed">{skill}</span>
                   </li>
                 ))}
@@ -217,212 +363,111 @@ const JobDetail = () => {
             <div className="bg-white rounded-lg border p-6">
               <h3 className="text-lg font-medium text-gray-900 mb-3">Share this job</h3>
               <div className="flex gap-2">
-                <Button size="sm" className="bg-blue-600 hover:bg-blue-700 text-white w-9 h-9 p-0">
-                  <Facebook className="h-4 w-4" />
+                <Button size="sm" className="bg-blue-600 hover:bg-blue-700 text-white px-4">
+                  <Facebook className="h-4 w-4 mr-2" />
+                  Facebook
                 </Button>
-                <Button size="sm" className="bg-purple-600 hover:bg-purple-700 text-white w-9 h-9 p-0">
-                  <Twitter className="h-4 w-4" />
+                <Button size="sm" className="bg-purple-600 hover:bg-purple-700 text-white px-4">
+                  <Twitter className="h-4 w-4 mr-2" />
+                  Twitter
                 </Button>
-                <Button size="sm" className="bg-red-600 hover:bg-red-700 text-white w-9 h-9 p-0">
-                  <Mail className="h-4 w-4" />
+                <Button size="sm" className="bg-red-600 hover:bg-red-700 text-white px-4">
+                  Google+
                 </Button>
               </div>
             </div>
           </div>
 
-          {/* Right Column - Sidebar */}
-          <div className="xl:w-96 space-y-6">
-            {/* Job Overview */}
+          {/* Right Column - Contact Form */}
+          <div className="xl:w-96">
             <div className="bg-white rounded-lg border p-6">
-              <h3 className="text-lg font-bold text-gray-900 mb-5">Job Overview</h3>
-              <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <Calendar className="h-4 w-4 text-red-600" />
-                  <div className="flex-1">
-                    <span className="text-sm text-gray-600">Date Posted:</span>
-                    <p className="text-sm text-gray-900">Posted {job.posted}</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3">
-                  <CalendarX className="h-4 w-4 text-red-600" />
-                  <div className="flex-1">
-                    <span className="text-sm text-gray-600">Expiration date:</span>
-                    <p className="text-sm text-gray-900">{job.expirationDate}</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3">
-                  <MapPin className="h-4 w-4 text-red-600" />
-                  <div className="flex-1">
-                    <span className="text-sm text-gray-600">Location:</span>
-                    <p className="text-sm text-gray-900">{job.location}</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Briefcase className="h-4 w-4 text-red-600" />
-                  <div className="flex-1">
-                    <span className="text-sm text-gray-600">Job Title:</span>
-                    <p className="text-sm text-gray-900">Designer</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Clock className="h-4 w-4 text-red-600" />
-                  <div className="flex-1">
-                    <span className="text-sm text-gray-600">Hours:</span>
-                    <p className="text-sm text-gray-900">{job.hours}</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3">
-                  <DollarSign className="h-4 w-4 text-red-600" />
-                  <div className="flex-1">
-                    <span className="text-sm text-gray-600">Rate:</span>
-                    <p className="text-sm text-gray-900">{job.rate}</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3">
-                  <DollarSign className="h-4 w-4 text-red-600" />
-                  <div className="flex-1">
-                    <span className="text-sm text-gray-600">Salary:</span>
-                    <p className="text-sm text-gray-900">{job.salary}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Job Location */}
-            <div className="bg-white rounded-lg border p-6">
-              <h3 className="text-lg font-bold text-gray-900 mb-4">Job Location</h3>
-              <div className="h-48 bg-gray-200 rounded-lg flex items-center justify-center">
-                <span className="text-gray-500">Map View - {job.location}</span>
-              </div>
-            </div>
-
-            {/* Job Skills */}
-            <div className="bg-white rounded-lg border p-6">
-              <h3 className="text-lg font-bold text-gray-900 mb-4">Job Skills</h3>
-              <div className="flex flex-wrap gap-2">
-                {job.tags.map((tag, index) => (
-                  <Badge key={index} variant="secondary" className="bg-orange-50 text-gray-700 hover:bg-orange-100">
-                    {tag}
-                  </Badge>
-                ))}
-              </div>
-            </div>
-
-            {/* Company Profile */}
-            <div className="bg-white rounded-lg border p-6">
-              <div className="flex items-center gap-3 mb-4">
-                <div className={`w-12 h-12 ${job.logoColor} rounded-lg flex items-center justify-center text-white font-semibold`}>
-                  {job.logo}
-                </div>
-                <div>
-                  <h3 className="font-bold text-gray-900">{job.company}</h3>
-                  <Link to="#" className="text-sm text-red-600 hover:text-red-700">View company profile</Link>
-                </div>
-              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-6">Contact Us</h3>
               
-              <div className="space-y-3 text-sm">
-                <div className="flex justify-between">
-                  <span className="text-gray-600">Primary Industry:</span>
-                  <span className="text-gray-900">{job.industry}</span>
+              <form className="space-y-4">
+                <div>
+                  <label className="text-sm font-medium text-gray-700 mb-2 block">Your Name</label>
+                  <Input placeholder="Enter your name" />
                 </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-600">Company Size:</span>
-                  <span className="text-gray-900">{job.companySize}</span>
+                
+                <div>
+                  <label className="text-sm font-medium text-gray-700 mb-2 block">Email Address</label>
+                  <Input type="email" placeholder="Enter your email" />
                 </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-600">Founded:</span>
-                  <span className="text-gray-900">{job.founded}</span>
+                
+                <div>
+                  <label className="text-sm font-medium text-gray-700 mb-2 block">Message</label>
+                  <Textarea placeholder="Write your message..." rows={6} />
                 </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-600">Phone:</span>
-                  <span className="text-gray-900">{job.phone}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-600">Email:</span>
-                  <span className="text-gray-900">{job.email}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-600">Location:</span>
-                  <span className="text-gray-900">{job.location}</span>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-2 mt-4 pt-4 border-t">
-                <Button variant="ghost" size="sm" className="text-gray-600 hover:text-red-600 w-8 h-8 p-0">
-                  <Facebook className="h-4 w-4" />
+                
+                <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
+                  Send Message
                 </Button>
-                <Button variant="ghost" size="sm" className="text-gray-600 hover:text-red-600 w-8 h-8 p-0">
-                  <Twitter className="h-4 w-4" />
-                </Button>
-                <Button variant="ghost" size="sm" className="text-gray-600 hover:text-red-600 w-8 h-8 p-0">
-                  <Instagram className="h-4 w-4" />
-                </Button>
-                <Button variant="ghost" size="sm" className="text-gray-600 hover:text-red-600 w-8 h-8 p-0">
-                  <Linkedin className="h-4 w-4" />
-                </Button>
-              </div>
-
-              <div className="mt-3">
-                <a href={`https://${job.website}`} className="text-blue-600 hover:text-blue-700 text-sm flex items-center gap-1">
-                  <Globe className="h-4 w-4" />
-                  {job.website}
-                </a>
-              </div>
+              </form>
             </div>
           </div>
         </div>
       </div>
 
       {/* Related Jobs */}
-      <div className="bg-gray-100 py-12">
+      <div className="bg-white py-12">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-2">Related Jobs</h2>
+          <div className="mb-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-2">Related Jobs</h2>
             <p className="text-gray-600">2020 jobs live – 293 added today</p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="space-y-4">
             {relatedJobs.map((relatedJob) => (
               <Link 
                 key={relatedJob.id}
                 to={`/job/${relatedJob.id}`}
-                className="bg-white rounded-lg border p-6 hover:shadow-lg transition-all duration-200 hover:border-red-200 group block"
+                className="block bg-white border rounded-lg p-6 hover:shadow-md transition-all duration-200 hover:border-blue-200 group"
               >
-                <div className="flex items-start justify-between mb-4">
-                  <div className={`w-12 h-12 ${relatedJob.logoColor} rounded-full flex items-center justify-center text-white font-semibold text-sm`}>
-                    {relatedJob.logo}
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-4">
+                    <div className={`w-12 h-12 ${relatedJob.logoColor} rounded-full flex items-center justify-center text-white font-semibold text-sm`}>
+                      {relatedJob.logo}
+                    </div>
+                    
+                    <div>
+                      <h3 className="text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
+                        {relatedJob.title}
+                      </h3>
+                      
+                      <div className="flex items-center gap-4 text-sm text-gray-600 mt-1">
+                        <div className="flex items-center gap-1">
+                          <Building className="h-4 w-4" />
+                          {relatedJob.company}
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <MapPin className="h-4 w-4" />
+                          {relatedJob.location}
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <Clock className="h-4 w-4" />
+                          {relatedJob.posted}
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <DollarSign className="h-4 w-4" />
+                          {relatedJob.salary}
+                        </div>
+                      </div>
+                      
+                      <div className="mt-2">
+                        <Badge className="bg-blue-600 text-white text-xs">
+                          {relatedJob.type}
+                        </Badge>
+                        <Badge className="bg-green-500 text-white text-xs ml-2">
+                          Urgent
+                        </Badge>
+                      </div>
+                    </div>
                   </div>
-                  <Button variant="ghost" size="sm" className="text-gray-600 hover:text-red-600">
-                    <Heart className="h-4 w-4" />
+                  
+                  <Button variant="ghost" size="sm" className="text-gray-600 hover:text-blue-600">
+                    <Heart className="h-5 w-5" />
                   </Button>
                 </div>
-
-                <h3 className="text-lg font-semibold text-gray-900 group-hover:text-red-600 transition-colors mb-2">
-                  {relatedJob.title}
-                </h3>
-
-                <div className="space-y-2 text-sm text-gray-600 mb-4">
-                  <div className="flex items-center gap-1">
-                    <Building className="h-4 w-4" />
-                    {relatedJob.company}
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <MapPin className="h-4 w-4" />
-                    {relatedJob.location}
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <Clock className="h-4 w-4" />
-                    {relatedJob.posted}
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <DollarSign className="h-4 w-4" />
-                    {relatedJob.salary}
-                  </div>
-                </div>
-
-                <Badge className="bg-red-600 text-white">
-                  {relatedJob.type}
-                </Badge>
               </Link>
             ))}
           </div>
