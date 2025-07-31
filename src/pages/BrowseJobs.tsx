@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Input } from "@/components/ui/input";
@@ -368,8 +369,8 @@ const BrowseJobs = () => {
                           <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground">
                             <Heart className="h-4 w-4" />
                           </Button>
-                          <Button>
-                            Apply Now
+                          <Button asChild>
+                            <Link to={`/job/${job.id}`}>Apply Now</Link>
                           </Button>
                         </div>
                       </div>
