@@ -108,12 +108,12 @@ const JobDetail = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-background">
       <Navbar />
 
       {/* Job Header */}
-      <div className="bg-white">
-        <div className="container mx-auto px-6 py-8">
+      <div className="bg-card border-b">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex flex-col lg:flex-row gap-8">
             {/* Left Column - Job Info */}
             <div className="flex-1">
@@ -125,12 +125,12 @@ const JobDetail = () => {
 
                 {/* Job Details */}
                 <div className="flex-1">
-                  <h1 className="text-2xl font-bold text-gray-900 mb-3">{job.title}</h1>
+                  <h1 className="text-3xl font-bold text-foreground mb-3">{job.title}</h1>
                   
-                  <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-4">
+                  <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground mb-4">
                     <div className="flex items-center gap-1">
                       <Building className="h-4 w-4" />
-                      <Link to="#" className="hover:text-blue-600">{job.company}</Link>
+                      <Link to="#" className="hover:text-primary">{job.company}</Link>
                     </div>
                     <div className="flex items-center gap-1">
                       <MapPin className="h-4 w-4" />
@@ -148,7 +148,7 @@ const JobDetail = () => {
 
                   {/* Tags */}
                   <div className="flex flex-wrap gap-2">
-                    <Badge className="bg-blue-600 text-white hover:bg-blue-700">Full Time</Badge>
+                    <Badge className="bg-primary text-primary-foreground hover:bg-primary/90">Full Time</Badge>
                     <Badge className="bg-green-500 text-white hover:bg-green-600">Private</Badge>
                     <Badge variant="secondary" className="bg-yellow-100 text-yellow-800 hover:bg-yellow-200">Urgent</Badge>
                   </div>
@@ -168,88 +168,88 @@ const JobDetail = () => {
             {/* Right Column - Apply Button */}
             <div className="lg:w-80">
               <div className="flex items-start gap-2 mb-6">
-                <Button className="flex-1 bg-blue-600 hover:bg-blue-700 text-white">
+                <Button className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground">
                   Apply for job
                 </Button>
-                <Button variant="ghost" size="sm" className="text-gray-600 hover:text-blue-600">
+                <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-primary">
                   <Heart className="h-5 w-5" />
                 </Button>
               </div>
 
               {/* Job Overview */}
-              <div className="bg-white rounded-lg border p-6 mb-6">
-                <h3 className="text-lg font-bold text-gray-900 mb-5">Job Overview</h3>
+              <div className="bg-card rounded-lg border p-6 mb-6">
+                <h3 className="text-lg font-bold text-foreground mb-5">Job Overview</h3>
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
-                    <Calendar className="h-4 w-4 text-blue-600" />
+                    <Calendar className="h-4 w-4 text-primary" />
                     <div className="flex-1">
-                      <span className="text-sm text-gray-600">Date Posted:</span>
-                      <p className="text-sm text-gray-900">Posted {job.posted}</p>
+                      <span className="text-sm text-muted-foreground">Date Posted:</span>
+                      <p className="text-sm text-foreground">Posted {job.posted}</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
-                    <CalendarX className="h-4 w-4 text-blue-600" />
+                    <CalendarX className="h-4 w-4 text-primary" />
                     <div className="flex-1">
-                      <span className="text-sm text-gray-600">Expiration date:</span>
-                      <p className="text-sm text-gray-900">{job.expirationDate}</p>
+                      <span className="text-sm text-muted-foreground">Expiration date:</span>
+                      <p className="text-sm text-foreground">{job.expirationDate}</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
-                    <MapPin className="h-4 w-4 text-blue-600" />
+                    <MapPin className="h-4 w-4 text-primary" />
                     <div className="flex-1">
-                      <span className="text-sm text-gray-600">Location:</span>
-                      <p className="text-sm text-gray-900">{job.location}</p>
+                      <span className="text-sm text-muted-foreground">Location:</span>
+                      <p className="text-sm text-foreground">{job.location}</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
-                    <Briefcase className="h-4 w-4 text-blue-600" />
+                    <Briefcase className="h-4 w-4 text-primary" />
                     <div className="flex-1">
-                      <span className="text-sm text-gray-600">Job Title:</span>
-                      <p className="text-sm text-gray-900">Designer</p>
+                      <span className="text-sm text-muted-foreground">Job Title:</span>
+                      <p className="text-sm text-foreground">Designer</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
-                    <Clock className="h-4 w-4 text-blue-600" />
+                    <Clock className="h-4 w-4 text-primary" />
                     <div className="flex-1">
-                      <span className="text-sm text-gray-600">Hours:</span>
-                      <p className="text-sm text-gray-900">{job.hours}</p>
+                      <span className="text-sm text-muted-foreground">Hours:</span>
+                      <p className="text-sm text-foreground">{job.hours}</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
-                    <DollarSign className="h-4 w-4 text-blue-600" />
+                    <DollarSign className="h-4 w-4 text-primary" />
                     <div className="flex-1">
-                      <span className="text-sm text-gray-600">Rate:</span>
-                      <p className="text-sm text-gray-900">{job.rate}</p>
+                      <span className="text-sm text-muted-foreground">Rate:</span>
+                      <p className="text-sm text-foreground">{job.rate}</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
-                    <DollarSign className="h-4 w-4 text-blue-600" />
+                    <DollarSign className="h-4 w-4 text-primary" />
                     <div className="flex-1">
-                      <span className="text-sm text-gray-600">Salary:</span>
-                      <p className="text-sm text-gray-900">{job.salary}</p>
+                      <span className="text-sm text-muted-foreground">Salary:</span>
+                      <p className="text-sm text-foreground">{job.salary}</p>
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* Job Location */}
-              <div className="bg-white rounded-lg border p-6 mb-6">
-                <h3 className="text-lg font-bold text-gray-900 mb-4">Job Location</h3>
-                <div className="h-48 bg-blue-100 rounded-lg flex items-center justify-center relative">
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-200 to-blue-300 rounded-lg opacity-50"></div>
+              <div className="bg-card rounded-lg border p-6 mb-6">
+                <h3 className="text-lg font-bold text-foreground mb-4">Job Location</h3>
+                <div className="h-48 bg-muted rounded-lg flex items-center justify-center relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-primary/20 rounded-lg"></div>
                   <div className="relative z-10 text-center">
-                    <MapPin className="h-8 w-8 text-blue-600 mx-auto mb-2" />
-                    <span className="text-gray-700 font-medium">{job.location}</span>
+                    <MapPin className="h-8 w-8 text-primary mx-auto mb-2" />
+                    <span className="text-foreground font-medium">{job.location}</span>
                   </div>
                 </div>
               </div>
 
               {/* Job Skills */}
-              <div className="bg-white rounded-lg border p-6 mb-6">
-                <h3 className="text-lg font-bold text-gray-900 mb-4">Job Skills</h3>
+              <div className="bg-card rounded-lg border p-6 mb-6">
+                <h3 className="text-lg font-bold text-foreground mb-4">Job Skills</h3>
                 <div className="flex flex-wrap gap-2">
                   {job.tags.map((tag, index) => (
-                    <Badge key={index} variant="secondary" className="bg-gray-100 text-gray-700 hover:bg-gray-200">
+                    <Badge key={index} variant="secondary">
                       {tag}
                     </Badge>
                   ))}
@@ -257,61 +257,61 @@ const JobDetail = () => {
               </div>
 
               {/* Company Profile */}
-              <div className="bg-white rounded-lg border p-6">
+              <div className="bg-card rounded-lg border p-6">
                 <div className="flex items-center gap-3 mb-4">
                   <div className={`w-12 h-12 ${job.logoColor} rounded-lg flex items-center justify-center text-white font-semibold`}>
                     {job.logo}
                   </div>
                   <div>
-                    <h3 className="font-bold text-gray-900">{job.company}</h3>
-                    <Link to="#" className="text-sm text-blue-600 hover:text-blue-700">View company profile</Link>
+                    <h3 className="font-bold text-foreground">{job.company}</h3>
+                    <Link to="#" className="text-sm text-primary hover:text-primary/80">View company profile</Link>
                   </div>
                 </div>
                 
                 <div className="space-y-3 text-sm">
                   <div className="flex justify-between">
-                    <span className="text-gray-600">Primary Industry:</span>
-                    <span className="text-gray-900">{job.industry}</span>
+                    <span className="text-muted-foreground">Primary Industry:</span>
+                    <span className="text-foreground">{job.industry}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-600">Company Size:</span>
-                    <span className="text-gray-900">{job.companySize}</span>
+                    <span className="text-muted-foreground">Company Size:</span>
+                    <span className="text-foreground">{job.companySize}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-600">Founded:</span>
-                    <span className="text-gray-900">{job.founded}</span>
+                    <span className="text-muted-foreground">Founded:</span>
+                    <span className="text-foreground">{job.founded}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-600">Phone:</span>
-                    <span className="text-gray-900">{job.phone}</span>
+                    <span className="text-muted-foreground">Phone:</span>
+                    <span className="text-foreground">{job.phone}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-600">Email:</span>
-                    <span className="text-gray-900">{job.email}</span>
+                    <span className="text-muted-foreground">Email:</span>
+                    <span className="text-foreground">{job.email}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-600">Location:</span>
-                    <span className="text-gray-900">{job.location}</span>
+                    <span className="text-muted-foreground">Location:</span>
+                    <span className="text-foreground">{job.location}</span>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-2 mt-4 pt-4 border-t">
-                  <Button variant="ghost" size="sm" className="text-gray-600 hover:text-blue-600 w-8 h-8 p-0">
+                  <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-primary w-8 h-8 p-0">
                     <Facebook className="h-4 w-4" />
                   </Button>
-                  <Button variant="ghost" size="sm" className="text-gray-600 hover:text-blue-600 w-8 h-8 p-0">
+                  <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-primary w-8 h-8 p-0">
                     <Twitter className="h-4 w-4" />
                   </Button>
-                  <Button variant="ghost" size="sm" className="text-gray-600 hover:text-blue-600 w-8 h-8 p-0">
+                  <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-primary w-8 h-8 p-0">
                     <Instagram className="h-4 w-4" />
                   </Button>
-                  <Button variant="ghost" size="sm" className="text-gray-600 hover:text-blue-600 w-8 h-8 p-0">
+                  <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-primary w-8 h-8 p-0">
                     <Linkedin className="h-4 w-4" />
                   </Button>
                 </div>
 
                 <div className="mt-3">
-                  <a href={`https://${job.website}`} className="text-blue-600 hover:text-blue-700 text-sm flex items-center gap-1">
+                  <a href={`https://${job.website}`} className="text-primary hover:text-primary/80 text-sm flex items-center gap-1">
                     <Globe className="h-4 w-4" />
                     {job.website}
                   </a>
@@ -323,45 +323,45 @@ const JobDetail = () => {
       </div>
 
       {/* Main Content */}
-      <div className="container mx-auto px-6 py-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex flex-col xl:flex-row gap-8">
           {/* Left Column - Job Details */}
           <div className="flex-1">
             {/* Job Description */}
-            <div className="bg-white rounded-lg border p-6 mb-6">
-              <h2 className="text-xl font-bold text-gray-900 mb-4">Job Description</h2>
-              <p className="text-gray-700 leading-relaxed">{job.description}</p>
+            <div className="bg-card rounded-lg border p-6 mb-6">
+              <h2 className="text-xl font-bold text-foreground mb-4">Job Description</h2>
+              <p className="text-muted-foreground leading-relaxed">{job.description}</p>
             </div>
 
             {/* Key Responsibilities */}
-            <div className="bg-white rounded-lg border p-6 mb-6">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Key Responsibilities</h3>
+            <div className="bg-card rounded-lg border p-6 mb-6">
+              <h3 className="text-xl font-bold text-foreground mb-4">Key Responsibilities</h3>
               <ul className="space-y-3">
                 {job.responsibilities.map((responsibility, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 shrink-0"></div>
-                    <span className="text-gray-700 leading-relaxed">{responsibility}</span>
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 shrink-0"></div>
+                    <span className="text-muted-foreground leading-relaxed">{responsibility}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
             {/* Skill & Experience */}
-            <div className="bg-white rounded-lg border p-6 mb-6">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Skill & Experience</h3>
+            <div className="bg-card rounded-lg border p-6 mb-6">
+              <h3 className="text-xl font-bold text-foreground mb-4">Skill & Experience</h3>
               <ul className="space-y-3">
                 {job.skills.map((skill, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 shrink-0"></div>
-                    <span className="text-gray-700 leading-relaxed">{skill}</span>
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 shrink-0"></div>
+                    <span className="text-muted-foreground leading-relaxed">{skill}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
             {/* Share */}
-            <div className="bg-white rounded-lg border p-6">
-              <h3 className="text-lg font-medium text-gray-900 mb-3">Share this job</h3>
+            <div className="bg-card rounded-lg border p-6">
+              <h3 className="text-lg font-medium text-foreground mb-3">Share this job</h3>
               <div className="flex gap-2">
                 <Button size="sm" className="bg-blue-600 hover:bg-blue-700 text-white px-4">
                   <Facebook className="h-4 w-4 mr-2" />
@@ -380,26 +380,26 @@ const JobDetail = () => {
 
           {/* Right Column - Contact Form */}
           <div className="xl:w-96">
-            <div className="bg-white rounded-lg border p-6">
-              <h3 className="text-lg font-bold text-gray-900 mb-6">Contact Us</h3>
+            <div className="bg-card rounded-lg border p-6">
+              <h3 className="text-lg font-bold text-foreground mb-6">Contact Us</h3>
               
               <form className="space-y-4">
                 <div>
-                  <label className="text-sm font-medium text-gray-700 mb-2 block">Your Name</label>
+                  <label className="text-sm font-medium text-foreground mb-2 block">Your Name</label>
                   <Input placeholder="Enter your name" />
                 </div>
                 
                 <div>
-                  <label className="text-sm font-medium text-gray-700 mb-2 block">Email Address</label>
+                  <label className="text-sm font-medium text-foreground mb-2 block">Email Address</label>
                   <Input type="email" placeholder="Enter your email" />
                 </div>
                 
                 <div>
-                  <label className="text-sm font-medium text-gray-700 mb-2 block">Message</label>
+                  <label className="text-sm font-medium text-foreground mb-2 block">Message</label>
                   <Textarea placeholder="Write your message..." rows={6} />
                 </div>
                 
-                <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
+                <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
                   Send Message
                 </Button>
               </form>
@@ -409,11 +409,11 @@ const JobDetail = () => {
       </div>
 
       {/* Related Jobs */}
-      <div className="bg-white py-12">
-        <div className="container mx-auto px-6">
+      <div className="bg-muted py-12">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-2">Related Jobs</h2>
-            <p className="text-gray-600">2020 jobs live – 293 added today</p>
+            <h2 className="text-2xl font-bold text-foreground mb-2">Related Jobs</h2>
+            <p className="text-muted-foreground">2020 jobs live – 293 added today</p>
           </div>
 
           <div className="space-y-4">
@@ -421,7 +421,7 @@ const JobDetail = () => {
               <Link 
                 key={relatedJob.id}
                 to={`/job/${relatedJob.id}`}
-                className="block bg-white border rounded-lg p-6 hover:shadow-md transition-all duration-200 hover:border-blue-200 group"
+                className="block bg-card border rounded-lg p-6 hover:shadow-md transition-all duration-200 hover:border-primary/20 group"
               >
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-4">
@@ -430,11 +430,11 @@ const JobDetail = () => {
                     </div>
                     
                     <div>
-                      <h3 className="text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
+                      <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
                         {relatedJob.title}
                       </h3>
                       
-                      <div className="flex items-center gap-4 text-sm text-gray-600 mt-1">
+                      <div className="flex items-center gap-4 text-sm text-muted-foreground mt-1">
                         <div className="flex items-center gap-1">
                           <Building className="h-4 w-4" />
                           {relatedJob.company}
@@ -454,7 +454,7 @@ const JobDetail = () => {
                       </div>
                       
                       <div className="mt-2">
-                        <Badge className="bg-blue-600 text-white text-xs">
+                        <Badge className="bg-primary text-primary-foreground text-xs">
                           {relatedJob.type}
                         </Badge>
                         <Badge className="bg-green-500 text-white text-xs ml-2">
@@ -464,7 +464,7 @@ const JobDetail = () => {
                     </div>
                   </div>
                   
-                  <Button variant="ghost" size="sm" className="text-gray-600 hover:text-blue-600">
+                  <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-primary">
                     <Heart className="h-5 w-5" />
                   </Button>
                 </div>
