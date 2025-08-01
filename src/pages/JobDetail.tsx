@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -27,9 +27,53 @@ import {
 
 const JobDetail = () => {
   const { jobId } = useParams();
+  const [job, setJob] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  // Sample job data - in a real app, this would come from an API
-  const job = {
+  useEffect(() => {
+    // Fetch job data from JSON file
+    const fetchJobData = async () => {
+      try {
+        const response = await fetch('/src/data/jobs.json');
+        const data = await response.json();
+        const foundJob = data.jobs.find(j => j.id.toString() === jobId);
+        setJob(foundJob);
+      } catch (error) {
+        console.error('Error fetching job data:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchJobData();
+  }, [jobId]);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-background">
+        <Navbar />
+        <div className="container mx-auto px-4 py-20 text-center">
+          <div className="text-lg">Loading...</div>
+        </div>
+        <Footer />
+      </div>
+    );
+  }
+
+  if (!job) {
+    return (
+      <div className="min-h-screen bg-background">
+        <Navbar />
+        <div className="container mx-auto px-4 py-20 text-center">
+          <div className="text-lg">Job not found</div>
+        </div>
+        <Footer />
+      </div>
+    );
+  }
+
+  // Sample related jobs data
+  const sampleJob = {
     id: jobId,
     title: "Product Designer / UI Designer",
     company: "InVision",
@@ -155,14 +199,6 @@ const JobDetail = () => {
                 </div>
               </div>
 
-              {/* Hero Image */}
-              <div className="mb-8">
-                <img 
-                  src="/lovable-uploads/059cbced-4a85-4f87-aa86-7a3a818a3647.png" 
-                  alt="Team collaboration" 
-                  className="w-full h-64 object-cover rounded-lg"
-                />
-              </div>
             </div>
 
             {/* Right Column - Apply Button */}
@@ -320,6 +356,15 @@ const JobDetail = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Hero Image */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <img 
+          src="/lovable-uploads/059cbced-4a85-4f87-aa86-7a3a818a3647.png" 
+          alt="Team collaboration" 
+          className="w-full h-64 object-cover rounded-lg"
+        />
       </div>
 
       {/* Main Content */}

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { MapPin, Clock, DollarSign, Bookmark } from "lucide-react";
 
 const FeaturedJobs = () => {
@@ -155,9 +156,12 @@ const FeaturedJobs = () => {
 
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-gray-500">{job.posted}</span>
-                    <button className="bg-pulse-500 hover:bg-pulse-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+                    <Link 
+                      to={`/job/${job.id}`}
+                      className="bg-pulse-500 hover:bg-pulse-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors inline-block"
+                    >
                       Apply Now
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>
