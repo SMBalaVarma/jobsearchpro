@@ -211,18 +211,6 @@ const JobDetail = () => {
         </div>
       </div>
 
-      {/* Hero Image */}
-      <div className="bg-muted/30">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="max-w-5xl mx-auto">
-            <img 
-              src="/lovable-uploads/059cbced-4a85-4f87-aa86-7a3a818a3647.png" 
-              alt="Team collaboration" 
-              className="w-full h-80 object-cover rounded-xl shadow-lg"
-            />
-          </div>
-        </div>
-      </div>
 
       {/* Main Content */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -230,6 +218,15 @@ const JobDetail = () => {
           <div className="grid grid-cols-1 xl:grid-cols-3 gap-12">
             {/* Left Column - Job Details (70% width) */}
             <div className="xl:col-span-2 space-y-8">
+              {/* Hero Image */}
+              <div className="rounded-xl overflow-hidden shadow-lg">
+                <img 
+                  src="/lovable-uploads/059cbced-4a85-4f87-aa86-7a3a818a3647.png" 
+                  alt="Team collaboration" 
+                  className="w-full h-80 object-cover"
+                />
+              </div>
+
               {/* Job Description */}
               <div className="bg-card rounded-xl border shadow-sm p-8">
                 <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-3">
@@ -293,7 +290,7 @@ const JobDetail = () => {
             {/* Right Column - Sidebar (30% width) */}
             <div className="xl:col-span-1 space-y-6">
               {/* Job Overview */}
-              <div className="bg-card rounded-xl border shadow-sm p-6 sticky top-6">
+              <div className="bg-card rounded-xl border shadow-sm p-6">
                 <h3 className="text-xl font-bold text-foreground mb-6">Job Overview</h3>
                 <div className="space-y-5">
                   <div className="flex items-center gap-4">
