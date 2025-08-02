@@ -124,8 +124,9 @@ const JobDetail = () => {
       type: "Full Time",
       salary: "$50k - $70k",
       posted: "17 hours ago",
-      logo: "M",
-      logoColor: "bg-gray-900"
+      logo: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=64&h=64&q=80",
+      logoColor: "bg-gray-900",
+      isImage: true
     },
     {
       id: 2,
@@ -135,8 +136,9 @@ const JobDetail = () => {
       type: "Full Time",
       salary: "$30k - $50k",
       posted: "17 hours ago",
-      logo: "F",
-      logoColor: "bg-orange-500"
+      logo: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=64&h=64&q=80",
+      logoColor: "bg-orange-500",
+      isImage: true
     },
     {
       id: 3,
@@ -146,8 +148,9 @@ const JobDetail = () => {
       type: "Full Time",
       salary: "$50k - $70k",
       posted: "17 hours ago",
-      logo: "W",
-      logoColor: "bg-red-600"
+      logo: "https://images.unsplash.com/photo-1496307653780-42ee777d4833?ixlib=rb-4.0.3&auto=format&fit=crop&w=64&h=64&q=80",
+      logoColor: "bg-red-600",
+      isImage: true
     }
   ];
 
@@ -221,8 +224,8 @@ const JobDetail = () => {
               {/* Hero Image */}
               <div className="rounded-xl overflow-hidden shadow-lg">
                 <img 
-                  src="/lovable-uploads/059cbced-4a85-4f87-aa86-7a3a818a3647.png" 
-                  alt="Team collaboration" 
+                  src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" 
+                  alt="Team collaboration and coding workspace" 
                   className="w-full h-80 object-cover"
                 />
               </div>
@@ -481,9 +484,17 @@ const JobDetail = () => {
                   className="block bg-card border rounded-xl p-6 hover:shadow-lg transition-all duration-300 hover:border-primary/20 hover:-translate-y-1 group"
                 >
                   <div className="flex items-start gap-4 mb-4">
-                    <div className={`w-14 h-14 ${relatedJob.logoColor} rounded-xl flex items-center justify-center text-white font-bold text-lg shrink-0 shadow-md`}>
-                      {relatedJob.logo}
-                    </div>
+                    {relatedJob.isImage ? (
+                      <img 
+                        src={relatedJob.logo} 
+                        alt={`${relatedJob.company} logo`}
+                        className="w-14 h-14 rounded-xl object-cover shadow-md"
+                      />
+                    ) : (
+                      <div className={`w-14 h-14 ${relatedJob.logoColor} rounded-xl flex items-center justify-center text-white font-bold text-lg shrink-0 shadow-md`}>
+                        {relatedJob.logo}
+                      </div>
+                    )}
                     
                     <div className="flex-1 min-w-0">
                       <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors mb-2 line-clamp-2">
