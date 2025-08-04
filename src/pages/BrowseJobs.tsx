@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import browseJobsIllustration from "@/assets/browse-jobs.webp";
 import { Input } from "@/components/ui/input";
 import { Slider } from "@/components/ui/slider";
 import { Button } from "@/components/ui/button";
@@ -278,7 +279,18 @@ const BrowseJobs = () => {
           <div className="flex-1">
             {/* Search Header */}
             <div className="bg-card rounded-lg border p-6 mb-6">
-              <h1 className="text-2xl font-bold text-foreground mb-4">Search Results</h1>
+              <div className="grid lg:grid-cols-2 gap-8 items-center mb-6">
+                <div>
+                  <h1 className="text-2xl font-bold text-foreground mb-4">Search Results</h1>
+                </div>
+                <div className="hidden lg:block">
+                  <img 
+                    src={browseJobsIllustration} 
+                    alt="Browse jobs illustration" 
+                    className="w-full h-auto max-w-sm mx-auto"
+                  />
+                </div>
+              </div>
               
               {/* Search Bar */}
               <div className="flex flex-col sm:flex-row gap-4 mb-6">

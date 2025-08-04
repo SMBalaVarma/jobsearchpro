@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { MapPin, Clock, DollarSign, Bookmark } from "lucide-react";
+import featuredJobsIllustration from "@/assets/featured-jobs.webp";
 
 const FeaturedJobs = () => {
   const jobs = [
@@ -90,17 +91,26 @@ const FeaturedJobs = () => {
     <section className="py-12 sm:py-16 bg-gray-50" id="featured-jobs">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-8 sm:mb-12">
-            <div className="job-chip mx-auto mb-4">
-              <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-pulse-500 text-white mr-2">02</span>
-              <span>Featured Jobs</span>
+          <div className="grid lg:grid-cols-2 gap-12 items-center mb-8 sm:mb-12">
+            <div className="text-center lg:text-left">
+              <div className="job-chip mx-auto lg:mx-0 mb-4">
+                <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-pulse-500 text-white mr-2">02</span>
+                <span>Featured Jobs</span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl font-display font-bold mb-4">
+                Top Job Opportunities
+              </h2>
+              <p className="text-lg text-gray-600 max-w-2xl">
+                Discover hand-picked job opportunities from leading companies across various industries.
+              </p>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-display font-bold mb-4">
-              Top Job Opportunities
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Discover hand-picked job opportunities from leading companies across various industries.
-            </p>
+            <div className="hidden lg:block">
+              <img 
+                src={featuredJobsIllustration} 
+                alt="Featured jobs illustration" 
+                className="w-full h-auto max-w-md mx-auto"
+              />
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

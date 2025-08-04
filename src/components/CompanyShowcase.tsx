@@ -1,5 +1,6 @@
 import React from "react";
 import { ArrowRight, Star, Users, MapPin } from "lucide-react";
+import companyShowcase from "@/assets/company-showcase.webp";
 
 const CompanyShowcase = () => {
   const companies = [
@@ -75,17 +76,26 @@ const CompanyShowcase = () => {
     <section className="py-12 sm:py-16 bg-gray-50" id="company-showcase">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-8 sm:mb-12">
-            <div className="job-chip mx-auto mb-4">
-              <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-pulse-500 text-white mr-2">04</span>
-              <span>Top Companies</span>
+          <div className="grid lg:grid-cols-2 gap-12 items-center mb-8 sm:mb-12">
+            <div className="text-center lg:text-left">
+              <div className="job-chip mx-auto lg:mx-0 mb-4">
+                <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-pulse-500 text-white mr-2">04</span>
+                <span>Top Companies</span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl font-display font-bold mb-4">
+                Work at Amazing Companies
+              </h2>
+              <p className="text-lg text-gray-600 max-w-2xl">
+                Join industry-leading companies that are shaping the future and offer exceptional career opportunities.
+              </p>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-display font-bold mb-4">
-              Work at Amazing Companies
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Join industry-leading companies that are shaping the future and offer exceptional career opportunities.
-            </p>
+            <div className="hidden lg:block">
+              <img 
+                src={companyShowcase} 
+                alt="Company showcase illustration" 
+                className="w-full h-auto max-w-md mx-auto"
+              />
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
