@@ -2,6 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { MapPin, Clock, DollarSign, Bookmark } from "lucide-react";
 import featuredJobsIllustration from "@/assets/featured-jobs.webp";
+import techCorpLogo from "@/assets/logos/techcorp-logo.webp";
+import innovateCoLogo from "@/assets/logos/innovateco-logo.webp";
+import designStudioLogo from "@/assets/logos/designstudio-logo.webp";
+import dataFlowLogo from "@/assets/logos/dataflow-logo.webp";
+import growthLabsLogo from "@/assets/logos/growthlabs-logo.webp";
+import cloudTechLogo from "@/assets/logos/cloudtech-logo.webp";
 
 const FeaturedJobs = () => {
   const jobs = [
@@ -12,7 +18,7 @@ const FeaturedJobs = () => {
       location: "San Francisco, CA",
       type: "Full-time",
       salary: "$120k - $180k",
-      logo: "🏢",
+      logo: techCorpLogo,
       description: "Join our innovative team to build next-generation software solutions. We're looking for a passionate developer with 5+ years of experience.",
       tags: ["React", "TypeScript", "Node.js", "AWS"],
       posted: "2 days ago",
@@ -25,7 +31,7 @@ const FeaturedJobs = () => {
       location: "New York, NY",
       type: "Full-time",
       salary: "$100k - $150k",
-      logo: "🚀",
+      logo: innovateCoLogo,
       description: "Lead product strategy and execution for our flagship product. Experience with agile methodologies and user research required.",
       tags: ["Product Strategy", "Agile", "Analytics", "Leadership"],
       posted: "3 days ago",
@@ -38,7 +44,7 @@ const FeaturedJobs = () => {
       location: "Remote",
       type: "Contract",
       salary: "$80k - $120k",
-      logo: "🎨",
+      logo: designStudioLogo,
       description: "Create beautiful and intuitive user experiences. Portfolio of mobile and web design projects required.",
       tags: ["UI/UX", "Figma", "Design Systems", "Mobile"],
       posted: "1 week ago",
@@ -51,7 +57,7 @@ const FeaturedJobs = () => {
       location: "Austin, TX",
       type: "Full-time",
       salary: "$110k - $160k",
-      logo: "📊",
+      logo: dataFlowLogo,
       description: "Analyze complex datasets to drive business insights. Strong background in Python, machine learning, and statistical analysis required.",
       tags: ["Python", "ML", "Statistics", "SQL"],
       posted: "4 days ago",
@@ -64,7 +70,7 @@ const FeaturedJobs = () => {
       location: "Chicago, IL",
       type: "Full-time",
       salary: "$70k - $100k",
-      logo: "📈",
+      logo: growthLabsLogo,
       description: "Drive marketing campaigns and brand awareness. Experience with digital marketing, content creation, and analytics tools required.",
       tags: ["Digital Marketing", "Content", "Analytics", "SEO"],
       posted: "5 days ago",
@@ -77,7 +83,7 @@ const FeaturedJobs = () => {
       location: "Seattle, WA",
       type: "Full-time",
       salary: "$130k - $170k",
-      logo: "☁️",
+      logo: cloudTechLogo,
       description: "Manage cloud infrastructure and CI/CD pipelines. Experience with Kubernetes, Docker, and cloud platforms required.",
       tags: ["AWS", "Kubernetes", "Docker", "CI/CD"],
       posted: "1 day ago",
@@ -122,7 +128,11 @@ const FeaturedJobs = () => {
                 <div className="p-6">
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex items-center gap-3">
-                      <div className="text-2xl">{job.logo}</div>
+                      <img 
+                        src={job.logo} 
+                        alt={`${job.company} logo`}
+                        className="w-12 h-12 rounded-lg object-cover shadow-md"
+                      />
                       <div>
                         <h3 className="font-semibold text-lg text-gray-800">{job.title}</h3>
                         <p className="text-gray-600">{job.company}</p>
