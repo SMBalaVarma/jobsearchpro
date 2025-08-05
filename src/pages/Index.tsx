@@ -2,13 +2,15 @@
 import React, { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import JobSearch from "@/components/JobSearch";
-import FeaturedJobs from "@/components/FeaturedJobs";
 import JobCategories from "@/components/JobCategories";
-import CompanyShowcase from "@/components/CompanyShowcase";
-import Features from "@/components/Features";
-import Testimonials from "@/components/Testimonials";
-import Newsletter from "@/components/Newsletter";
+import BrowseJobsSection from "@/components/BrowseJobsSection";
+import FindMatchSection from "@/components/FindMatchSection";
+import ApplyDirectlySection from "@/components/ApplyDirectlySection";
+import FeaturedJobs from "@/components/FeaturedJobs";
+import StatsSection from "@/components/StatsSection";
+import PricingSection from "@/components/PricingSection";
+import LatestNewsSection from "@/components/LatestNewsSection";
+import PostJobSection from "@/components/PostJobSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -60,15 +62,17 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <main className="space-y-4 sm:space-y-8"> {/* Reduced space on mobile */}
+      <main>
         <Hero />
-        <JobSearch />
-        <FeaturedJobs />
         <JobCategories />
-        <CompanyShowcase />
-        <Features />
-        <Testimonials />
-        <Newsletter />
+        <BrowseJobsSection />
+        <FindMatchSection />
+        <ApplyDirectlySection />
+        <FeaturedJobs />
+        <StatsSection />
+        <PricingSection />
+        <LatestNewsSection />
+        <PostJobSection />
       </main>
       <Footer />
     </div>

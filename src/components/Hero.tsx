@@ -28,102 +28,62 @@ const Hero = () => {
   
   return (
     <section 
-      className="overflow-hidden relative bg-gradient-to-br from-pulse-50 via-white to-pulse-100" 
-      id="hero" 
-      style={{
-        padding: isMobile ? '100px 12px 40px' : '120px 20px 60px'
-      }}
+      className="relative bg-gradient-to-r from-blue-50 to-indigo-100 min-h-screen flex items-center" 
+      id="hero"
     >
-      <div className="absolute -top-[10%] -right-[5%] w-1/2 h-[70%] bg-pulse-gradient opacity-20 blur-3xl rounded-full"></div>
-      
-      {/* Hero illustration */}
-      <div className="absolute top-1/2 right-10 transform -translate-y-1/2 hidden lg:block opacity-80">
-        <img 
-          src={heroIllustration} 
-          alt="Professional job search illustration" 
-          className="w-96 h-72 object-contain"
-        />
-      </div>
-      
-      <div className="container px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="text-center mb-8 sm:mb-12">
-          <h1 
-            className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-tight mb-4 sm:mb-6 opacity-0 animate-fade-in" 
-            style={{ animationDelay: "0.1s" }}
-          >
-            Find Your Dream Job Today
-          </h1>
-          
-          <p 
-            style={{ animationDelay: "0.3s" }} 
-            className="text-lg sm:text-xl text-gray-600 mb-8 sm:mb-12 max-w-2xl mx-auto opacity-0 animate-fade-in"
-          >
-            Connect with top employers and discover opportunities that match your skills and ambitions.
-          </p>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left Content */}
+          <div className="text-center lg:text-left space-y-8">
+            <div className="space-y-6">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                Join us & Explore{" "}
+                <span className="text-blue-600">Thousands of Jobs</span>
+              </h1>
+              
+              <p className="text-lg text-gray-600 max-w-xl mx-auto lg:mx-0">
+                Find your dream career! Explore the latest job opportunities from top companies around the world.
+              </p>
+            </div>
 
-          {/* Job Search Bar */}
-          <div 
-            className="max-w-4xl mx-auto bg-white rounded-2xl shadow-elegant p-4 sm:p-6 opacity-0 animate-fade-in"
-            style={{ animationDelay: "0.5s" }}
-          >
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
-              <div className="flex-1 relative">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <Search className="h-5 w-5 text-gray-400" />
+            {/* Search Bar */}
+            <div className="bg-white rounded-2xl shadow-lg p-6 max-w-2xl mx-auto lg:mx-0">
+              <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex-1 relative">
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+                  <input
+                    type="text"
+                    placeholder="Job title or keyword"
+                    value={searchKeyword}
+                    onChange={(e) => setSearchKeyword(e.target.value)}
+                    className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  />
                 </div>
-                <input
-                  type="text"
-                  placeholder="Job title, keywords, or company"
-                  value={searchKeyword}
-                  onChange={(e) => setSearchKeyword(e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pulse-500 focus:border-transparent"
-                />
+                <button
+                  onClick={handleSearch}
+                  className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-8 rounded-lg transition-colors"
+                >
+                  Search
+                </button>
               </div>
-              
-              <div className="flex-1 relative">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <MapPin className="h-5 w-5 text-gray-400" />
-                </div>
-                <input
-                  type="text"
-                  placeholder="City, state, or remote"
-                  value={location}
-                  onChange={(e) => setLocation(e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pulse-500 focus:border-transparent"
-                />
-              </div>
-              
-              <button
-                onClick={handleSearch}
-                className="bg-pulse-500 hover:bg-pulse-600 text-white font-semibold py-3 px-6 sm:px-8 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2"
-              >
-                <Search className="h-5 w-5" />
-                Search Jobs
-              </button>
+            </div>
+
+            {/* Popular Tags */}
+            <div className="text-center lg:text-left">
+              <p className="text-gray-600 mb-4">Popular: Designer, Programming, Digital Marketing, Video, Animation</p>
             </div>
           </div>
 
-          {/* Popular Categories */}
-          <div 
-            className="mt-8 sm:mt-12 opacity-0 animate-fade-in"
-            style={{ animationDelay: "0.7s" }}
-          >
-            <p className="text-gray-600 mb-4">Popular Categories:</p>
-            <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
-              {["Technology", "Healthcare", "Finance", "Marketing", "Sales", "Remote"].map((category) => (
-                <button
-                  key={category}
-                  className="px-4 py-2 bg-white border border-gray-300 rounded-full hover:border-pulse-500 hover:text-pulse-500 transition-colors duration-300 text-sm"
-                >
-                  {category}
-                </button>
-              ))}
-            </div>
+          {/* Right Illustration */}
+          <div className="hidden lg:block">
+            <img 
+              src={heroIllustration} 
+              alt="Job search illustration" 
+              className="w-full h-auto max-w-lg mx-auto"
+            />
           </div>
         </div>
       </div>
-      
-      <div className="hidden lg:block absolute bottom-0 left-1/4 w-64 h-64 bg-pulse-100/30 rounded-full blur-3xl -z-10"></div>
     </section>
   );
 };
