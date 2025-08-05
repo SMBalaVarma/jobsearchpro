@@ -70,50 +70,73 @@ const JobCategories = () => {
   ];
 
   return (
-    <section className="py-16 bg-gray-50" id="job-categories">
+    <section className="py-12 sm:py-16 bg-white" id="job-categories">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900">
-              Popular Job Categories
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              2020 jobs live - 293 added today.
-            </p>
+          <div className="grid lg:grid-cols-2 gap-12 items-center mb-8 sm:mb-12">
+            <div className="text-center lg:text-left">
+              <div className="job-chip mx-auto lg:mx-0 mb-4">
+                <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-pulse-500 text-white mr-2">03</span>
+                <span>Job Categories</span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl font-display font-bold mb-4">
+                Explore Career Opportunities
+              </h2>
+              <p className="text-lg text-gray-600 max-w-2xl">
+                Find the perfect role in your field of expertise or explore new career paths with our diverse job categories.
+              </p>
+            </div>
+            <div className="hidden lg:block">
+              <img 
+                src={jobCategoriesIllustration} 
+                alt="Job categories illustration" 
+                className="w-full h-auto max-w-md mx-auto"
+              />
+            </div>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
-            {categories.slice(0, 6).map((category, index) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {categories.map((category, index) => (
               <div
                 key={category.title}
-                className="group bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:translate-y-[-2px] cursor-pointer text-center"
+                className="group bg-white rounded-xl shadow-elegant hover:shadow-elegant-hover transition-all duration-300 hover:translate-y-[-4px] overflow-hidden cursor-pointer"
               >
-                <div className="text-4xl mb-4">{category.icon}</div>
-                <h3 className="font-semibold text-gray-800 mb-2 text-sm">
-                  {category.title}
-                </h3>
-                <p className="text-gray-500 text-xs">
-                  {category.jobCount} Available position
-                </p>
+                <div className="p-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="text-3xl">{category.icon}</div>
+                    <div className="text-right">
+                      <div className="text-2xl font-bold text-gray-800">{category.jobCount}</div>
+                      <div className="text-sm text-gray-600">open positions</div>
+                    </div>
+                  </div>
+                  
+                  <h3 className="text-xl font-semibold text-gray-800 mb-2 group-hover:text-pulse-600 transition-colors">
+                    {category.title}
+                  </h3>
+                  
+                  <p className="text-gray-600 text-sm mb-4">
+                    {category.description}
+                  </p>
+
+                  <div className="flex items-center justify-between">
+                    <button className="text-pulse-600 hover:text-pulse-700 font-medium text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+                      Browse Jobs
+                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </button>
+                    
+                    <div className={`w-8 h-1 bg-gradient-to-r ${category.color} rounded-full`}></div>
+                  </div>
+                </div>
+                
+                <div className={`h-1 bg-gradient-to-r ${category.color} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left`}></div>
               </div>
             ))}
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-8">
-            {categories.slice(6, 9).map((category, index) => (
-              <div
-                key={category.title}
-                className="group bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:translate-y-[-2px] cursor-pointer text-center"
-              >
-                <div className="text-4xl mb-4">{category.icon}</div>
-                <h3 className="font-semibold text-gray-800 mb-2">
-                  {category.title}
-                </h3>
-                <p className="text-gray-500 text-sm">
-                  {category.jobCount} Available position
-                </p>
-              </div>
-            ))}
+          <div className="text-center mt-8 sm:mt-12">
+            <button className="bg-pulse-500 hover:bg-pulse-600 text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105">
+              View All Categories
+            </button>
           </div>
         </div>
       </div>
