@@ -1,6 +1,7 @@
 import React from "react";
 import { ArrowRight, Star, Users, MapPin } from "lucide-react";
 import companyShowcase from "@/assets/company-showcase.webp";
+import companyBackground from "@/assets/company-background.webp";
 import techCorpLogo from "@/assets/logos/techcorp-logo.webp";
 import innovateCoLogo from "@/assets/logos/innovateco-logo.webp";
 import designStudioLogo from "@/assets/logos/designstudio-logo.webp";
@@ -79,8 +80,18 @@ const CompanyShowcase = () => {
   ];
 
   return (
-    <section className="py-12 sm:py-16 bg-gray-50" id="company-showcase">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section 
+      className="py-12 sm:py-16 relative" 
+      id="company-showcase"
+      style={{
+        backgroundImage: `url(${companyBackground})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}
+    >
+      <div className="absolute inset-0 bg-gray-50/90"></div>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-8 sm:mb-12">
             <div className="text-center lg:text-left">
