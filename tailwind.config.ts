@@ -142,10 +142,10 @@ export default {
 				'pulse-gradient': 'linear-gradient(180deg, rgba(239,68,68,0.8) 0%, rgba(239,68,68,0) 100%)',
 			},
 			fontFamily: {
-				'sans': ['Inter', 'sans-serif'],
-				'display': ['Brockmann', 'SF Pro Display', 'Inter', 'sans-serif'],
+				'sans': ['Poppins', 'sans-serif'],
+				'display': ['Poppins', 'sans-serif'],
+				'serif': ['Merriweather', 'serif'],
 				'brockmann': ['Brockmann', 'serif'],
-				'playfair': ['"Playfair Display"', 'serif'],
 			},
 			boxShadow: {
 				'elegant': '0 4px 20px rgba(0, 0, 0, 0.08)',
