@@ -1,7 +1,6 @@
 
 import React, { useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
-import featuresBackground from "@/assets/features-background.webp";
 
 interface FeatureCardProps {
   icon: React.ReactNode;
@@ -89,19 +88,8 @@ const Features = () => {
   }, []);
   
   return (
-    <section 
-      className="py-12 sm:py-16 md:py-20 pb-0 relative" 
-      id="how-it-works" 
-      ref={sectionRef}
-      style={{
-        backgroundImage: `url(${featuresBackground})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
-      }}
-    >
-      <div className="absolute inset-0 bg-white/90"></div>
-      <div className="section-container relative z-10">
+    <section className="py-12 sm:py-16 md:py-20 pb-0 relative bg-white" id="how-it-works" ref={sectionRef}>
+      <div className="section-container">
         <div className="text-center mb-10 sm:mb-16">
           <div className="job-chip mx-auto mb-3 sm:mb-4 opacity-0 fade-in-element">
             <span>How It Works</span>

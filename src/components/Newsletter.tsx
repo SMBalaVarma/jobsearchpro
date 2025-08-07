@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { toast } from "@/components/ui/use-toast";
 import newsletterIllustration from "@/assets/newsletter.webp";
-import newsletterBackground from "@/assets/newsletter-background.webp";
 const Newsletter = () => {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -26,18 +25,8 @@ const Newsletter = () => {
       setIsSubmitting(false);
     }, 1000);
   };
-  return <section 
-    id="newsletter" 
-    className="py-0 relative"
-    style={{
-      backgroundImage: `url(${newsletterBackground})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat'
-    }}
-  >
-    <div className="absolute inset-0 bg-white/85"></div>
-      <div className="section-container opacity-0 animate-on-scroll relative z-10">
+  return <section id="newsletter" className="bg-white py-0">
+      <div className="section-container opacity-0 animate-on-scroll">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
