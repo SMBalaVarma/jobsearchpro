@@ -86,13 +86,13 @@ const CompanyShowcase = () => {
             <div className="text-center lg:text-left">
               <div className="job-chip mx-auto lg:mx-0 mb-4">
                 <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-pulse-500 text-white mr-2">04</span>
-                <span>Top Companies</span>
+                <span>Top Unternehmen</span>
               </div>
               <h2 className="text-3xl sm:text-4xl font-display font-bold mb-4">
-                Work at Amazing Companies
+                Arbeiten Sie bei fantastischen Unternehmen
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl">
-                Join industry-leading companies that are shaping the future and offer exceptional career opportunities.
+                Schließen Sie sich branchenführenden Unternehmen an, die die Zukunft gestalten und außergewöhnliche Karrieremöglichkeiten bieten.
               </p>
             </div>
             <div className="hidden lg:block">
@@ -128,7 +128,7 @@ const CompanyShowcase = () => {
                     </div>
                     <div className="text-right">
                       <div className="text-lg font-bold text-pulse-600">{company.openJobs}</div>
-                      <div className="text-sm text-gray-600">open jobs</div>
+                      <div className="text-sm text-gray-600">offene Jobs</div>
                     </div>
                   </div>
 
@@ -139,7 +139,7 @@ const CompanyShowcase = () => {
                   <div className="space-y-2 mb-4">
                     <div className="flex items-center gap-2 text-sm text-gray-600">
                       <Users className="h-4 w-4" />
-                      <span>{company.employees} employees</span>
+                      <span>{company.employees} Mitarbeiter</span>
                     </div>
                     <div className="flex items-center gap-2 text-sm text-gray-600">
                       <MapPin className="h-4 w-4" />
@@ -160,7 +160,7 @@ const CompanyShowcase = () => {
 
                   <div className="flex items-center justify-between">
                     <button className="text-pulse-600 hover:text-pulse-700 font-medium text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
-                      View Jobs
+                      Jobs Anzeigen
                       <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </button>
                     
@@ -175,7 +175,7 @@ const CompanyShowcase = () => {
 
           <div className="text-center mt-8 sm:mt-12">
             <button className="bg-white border border-pulse-500 text-pulse-500 hover:bg-pulse-500 hover:text-white px-8 py-3 rounded-lg font-medium transition-all duration-300">
-              View All Companies
+              Alle Unternehmen Anzeigen
             </button>
           </div>
         </div>

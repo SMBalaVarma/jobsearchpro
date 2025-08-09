@@ -111,9 +111,9 @@ const BrowseJobs = () => {
     }
   ];
 
-  const jobTypes = ["Full Time", "Part Time", "Freelance", "Internship"];
-  const experienceLevels = ["Entry Level", "Mid Level", "Senior Level"];
-  const datePosted = ["Any", "Last Hour", "Last 24 Hours", "Last 7 Days", "Last 14 Days", "Last 30 Days"];
+  const jobTypes = ["Vollzeit", "Teilzeit", "Freelance", "Praktikum"];
+  const experienceLevels = ["Einstiegslevel", "Mittleres Level", "Senior Level"];
+  const datePosted = ["Alle", "Letzte Stunde", "Letzten 24 Stunden", "Letzten 7 Tage", "Letzten 14 Tage", "Letzten 30 Tage"];
   const popularTags = ["React", "Angular", "Vue", "Node", "Express", "JavaScript", "TypeScript", "Python"];
 
   return (
@@ -124,7 +124,7 @@ const BrowseJobs = () => {
       <div className="border-b bg-muted/30">
         <div className="container mx-auto px-6 py-4">
           <nav className="text-sm text-muted-foreground">
-            Home › <span className="text-foreground">Search Results</span>
+            Startseite › <span className="text-foreground">Suchergebnisse</span>
           </nav>
         </div>
       </div>
@@ -136,18 +136,18 @@ const BrowseJobs = () => {
             
             {/* Location Filter */}
             <div className="bg-card rounded-lg border p-6">
-              <h3 className="font-semibold text-lg mb-4 text-foreground">Location</h3>
+              <h3 className="font-semibold text-lg mb-4 text-foreground">Standort</h3>
               <div className="space-y-4">
                 <div className="relative">
                   <MapPin className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                   <Input 
-                    placeholder="Enter location" 
+                    placeholder="Standort eingeben" 
                     className="pl-10"
                   />
                 </div>
                 <div>
                   <label className="text-sm font-medium text-foreground mb-2 block">
-                    Within Radius: {radiusRange[0]} miles
+                    Im Umkreis von: {radiusRange[0]} km
                   </label>
                   <Slider
                     value={radiusRange}
@@ -158,7 +158,7 @@ const BrowseJobs = () => {
                   />
                   <div className="flex justify-between text-xs text-muted-foreground mt-1">
                     <span>0</span>
-                    <span>100 miles</span>
+                    <span>100 km</span>
                   </div>
                 </div>
               </div>
@@ -166,7 +166,7 @@ const BrowseJobs = () => {
 
             {/* Job Type Filter */}
             <div className="bg-card rounded-lg border p-6">
-              <h3 className="font-semibold text-lg mb-4 text-foreground">Job Type</h3>
+              <h3 className="font-semibold text-lg mb-4 text-foreground">Arbeitstyp</h3>
               <div className="space-y-3">
                 {jobTypes.map((type) => (
                   <label key={type} className="flex items-center cursor-pointer group">
@@ -189,7 +189,7 @@ const BrowseJobs = () => {
 
             {/* Date Posted Filter */}
             <div className="bg-card rounded-lg border p-6">
-              <h3 className="font-semibold text-lg mb-4 text-foreground">Date Posted</h3>
+              <h3 className="font-semibold text-lg mb-4 text-foreground">Veröffentlichungsdatum</h3>
               <div className="space-y-3">
                 {datePosted.map((option) => (
                   <label key={option} className="flex items-center cursor-pointer group">
@@ -209,7 +209,7 @@ const BrowseJobs = () => {
 
             {/* Experience Level */}
             <div className="bg-card rounded-lg border p-6">
-              <h3 className="font-semibold text-lg mb-4 text-foreground">Experience Level</h3>
+              <h3 className="font-semibold text-lg mb-4 text-foreground">Erfahrungslevel</h3>
               <div className="space-y-3">
                 {experienceLevels.map((level) => (
                   <label key={level} className="flex items-center cursor-pointer group">
@@ -227,10 +227,10 @@ const BrowseJobs = () => {
 
             {/* Salary Range */}
             <div className="bg-card rounded-lg border p-6">
-              <h3 className="font-semibold text-lg mb-4 text-foreground">Salary Range</h3>
+              <h3 className="font-semibold text-lg mb-4 text-foreground">Gehaltsbereich</h3>
               <div className="space-y-4">
                 <label className="text-sm font-medium text-foreground">
-                  Up to ${salaryRange[0]}k per year
+                  Bis zu {salaryRange[0]}k € pro Jahr
                 </label>
                 <Slider
                   value={salaryRange}
@@ -240,8 +240,8 @@ const BrowseJobs = () => {
                   className="w-full"
                 />
                 <div className="flex justify-between text-xs text-muted-foreground">
-                  <span>$0k</span>
-                  <span>$200k+</span>
+                  <span>0k €</span>
+                  <span>200k+ €</span>
                 </div>
               </div>
             </div>
@@ -272,11 +272,11 @@ const BrowseJobs = () => {
                   Recruiting?
                 </h3>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Advertise your jobs to millions of monthly users
+                  Bewerben Sie Ihre Jobs bei Millionen von monatlichen Nutzern
                 </p>
               </div>
               <Button className="w-full">
-                Get Started
+                Jetzt Starten
               </Button>
             </div>
           </div>
@@ -287,7 +287,7 @@ const BrowseJobs = () => {
             <div className="bg-card rounded-lg border p-6 mb-6">
               <div className="grid lg:grid-cols-2 gap-8 items-center mb-6">
                 <div>
-                  <h1 className="text-2xl font-bold text-foreground mb-4">Search Results</h1>
+                  <h1 className="text-2xl font-bold text-foreground mb-4">Suchergebnisse</h1>
                 </div>
                 <div className="hidden lg:block">
                   <img 
@@ -303,29 +303,29 @@ const BrowseJobs = () => {
                 <div className="flex-1 relative">
                   <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                   <Input 
-                    placeholder="Job title, keywords, or company" 
+                    placeholder="Jobtitel, Schlüsselwörter oder Unternehmen" 
                     className="pl-10"
                   />
                 </div>
                 <div className="flex-1 relative">
                   <MapPin className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                   <Input 
-                    placeholder="City, state, or remote" 
+                    placeholder="Stadt, Bundesland oder remote" 
                     className="pl-10"
                   />
                 </div>
                 <Button size="lg" className="px-8">
-                  Search Jobs
+                  Jobs Suchen
                 </Button>
               </div>
 
               {/* Results Info and Sort */}
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                 <p className="text-muted-foreground">
-                  Showing 1-{jobs.length} of 243 jobs
+                  Zeige 1-{jobs.length} von 243 Jobs
                 </p>
                 <div className="flex items-center gap-2">
-                  <span className="text-sm text-muted-foreground">Sort by:</span>
+                  <span className="text-sm text-muted-foreground">Sortieren nach:</span>
                   <div className="flex bg-muted rounded-lg p-1">
                     <button
                       onClick={() => setActiveSort("newest")}
@@ -335,7 +335,7 @@ const BrowseJobs = () => {
                           : "text-muted-foreground hover:text-foreground"
                       }`}
                     >
-                      Newest
+                      Neueste
                     </button>
                     <button
                       onClick={() => setActiveSort("oldest")}
@@ -345,7 +345,7 @@ const BrowseJobs = () => {
                           : "text-muted-foreground hover:text-foreground"
                       }`}
                     >
-                      Oldest
+                      Älteste
                     </button>
                   </div>
                 </div>
@@ -377,7 +377,7 @@ const BrowseJobs = () => {
                             </h3>
                             {job.featured && (
                               <Badge variant="secondary" className="bg-primary/10 text-primary">
-                                Featured
+                                Empfohlen
                               </Badge>
                             )}
                           </div>
@@ -390,7 +390,7 @@ const BrowseJobs = () => {
                             <Heart className="h-4 w-4" />
                           </Button>
                           <Button asChild>
-                            <Link to={`/job/${job.id}`}>Apply Now</Link>
+                            <Link to={`/job/${job.id}`}>Jetzt Bewerben</Link>
                           </Button>
                         </div>
                       </div>
@@ -423,7 +423,7 @@ const BrowseJobs = () => {
             {/* Load More */}
             <div className="text-center mt-8">
               <Button variant="outline" size="lg" className="px-8">
-                Show More Jobs
+                Mehr Jobs Anzeigen
               </Button>
             </div>
           </div>
