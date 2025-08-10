@@ -33,81 +33,81 @@ const BrowseJobs = () => {
   const jobs = [
     {
       id: 1,
-      title: "Senior Web Developer",
+      title: "Senior Web-Entwickler",
       company: "Tech Innovators Inc.",
-      location: "New York, NY",
-      type: "Full Time",
-      salary: "$80,000 - $120,000",
-      posted: "2 days ago",
+      location: "Berlin, Deutschland",
+      type: "Vollzeit",
+      salary: "80.000 € - 120.000 €",
+      posted: "vor 2 Tagen",
       logo: techInnovatorsLogo,
       logoColor: "bg-emerald-500",
       featured: true,
-      description: "Join our dynamic team building cutting-edge web applications with React and Node.js."
+      description: "Werden Sie Teil unseres dynamischen Teams beim Aufbau modernster Webanwendungen mit React und Node.js."
     },
     {
       id: 2,
-      title: "Frontend Engineer",
+      title: "Frontend-Entwickler",
       company: "Digital Solutions Co.",
       location: "Remote",
-      type: "Full Time", 
-      salary: "$70,000 - $100,000",
-      posted: "1 day ago",
+      type: "Vollzeit", 
+      salary: "70.000 € - 100.000 €",
+      posted: "vor 1 Tag",
       logo: digitalSolutionsLogo,
       logoColor: "bg-blue-500",
       featured: false,
-      description: "Work with modern frameworks to create beautiful user interfaces and experiences."
+      description: "Arbeiten Sie mit modernen Frameworks, um schöne Benutzeroberflächen und Erfahrungen zu schaffen."
     },
     {
       id: 3,
-      title: "Web Developer",
+      title: "Web-Entwickler",
       company: "Creative Minds Media",
-      location: "Los Angeles, CA",
-      type: "Part Time",
-      salary: "$60,000 - $90,000", 
-      posted: "3 days ago",
+      location: "München, Deutschland",
+      type: "Teilzeit",
+      salary: "60.000 € - 90.000 €", 
+      posted: "vor 3 Tagen",
       logo: creativeMindsLogo,
       logoColor: "bg-purple-500",
       featured: false,
-      description: "Design and develop responsive websites for creative agencies and startups."
+      description: "Entwerfen und entwickeln Sie responsive Websites für Kreativagenturen und Startups."
     },
     {
       id: 4,
-      title: "Junior Web Developer", 
+      title: "Junior Web-Entwickler", 
       company: "Startup Hub Inc.",
-      location: "San Francisco, CA",
-      type: "Full Time",
-      salary: "$50,000 - $70,000",
-      posted: "1 week ago", 
+      location: "Hamburg, Deutschland",
+      type: "Vollzeit",
+      salary: "50.000 € - 70.000 €",
+      posted: "vor 1 Woche", 
       logo: startupHubLogo,
       logoColor: "bg-orange-500",
       featured: false,
-      description: "Perfect opportunity for recent graduates to learn and grow in a fast-paced environment."
+      description: "Perfekte Gelegenheit für Absolventen, in einer schnelllebigen Umgebung zu lernen und zu wachsen."
     },
     {
       id: 5,
-      title: "Senior Frontend Developer",
+      title: "Senior Frontend-Entwickler",
       company: "Innovative Software Ltd.",
-      location: "London, UK",
-      type: "Full Time",
-      salary: "$90,000 - $130,000",
-      posted: "5 days ago",
+      location: "Frankfurt, Deutschland",
+      type: "Vollzeit",
+      salary: "90.000 € - 130.000 €",
+      posted: "vor 5 Tagen",
       logo: innovativeSoftwareLogo,
       logoColor: "bg-indigo-500",
       featured: true,
-      description: "Lead frontend development initiatives using the latest technologies and best practices."
+      description: "Leiten Sie Frontend-Entwicklungsinitiativen mit den neuesten Technologien und Best Practices."
     },
     {
       id: 6,
-      title: "React Developer",
+      title: "React-Entwickler",
       company: "Global Tech Corp.",
-      location: "Austin, TX",
-      type: "Contract",
-      salary: "$85,000 - $115,000",
-      posted: "4 days ago",
+      location: "Köln, Deutschland",
+      type: "Freelance",
+      salary: "85.000 € - 115.000 €",
+      posted: "vor 4 Tagen",
       logo: globalTechLogo,
       logoColor: "bg-gray-700",
       featured: false,
-      description: "Develop and maintain large-scale React applications for enterprise clients."
+      description: "Entwickeln und warten Sie große React-Anwendungen für Unternehmenskunden."
     }
   ];
 
