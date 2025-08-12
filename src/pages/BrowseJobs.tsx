@@ -121,7 +121,7 @@ const BrowseJobs = () => {
       <Navbar />
       
       {/* Breadcrumb */}
-      <div className="border-b bg-muted/30">
+      <div className="border-b bg-muted/30 pt-16 sm:pt-20 md:pt-24">
         <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
           <nav className="text-xs sm:text-sm text-muted-foreground">
             Startseite › <span className="text-foreground">Suchergebnisse</span>
