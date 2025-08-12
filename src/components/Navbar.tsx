@@ -84,10 +84,21 @@ const Navbar = () => {
 
       {/* Mobile Navigation - improved for better touch experience */}
       <div className={cn(
-        "fixed inset-0 z-40 bg-white flex flex-col pt-16 px-6 md:hidden transition-all duration-300 ease-in-out",
+        "fixed inset-0 z-50 bg-white/95 backdrop-blur-md flex flex-col md:hidden transition-all duration-300 ease-in-out",
         isMenuOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full pointer-events-none"
       )}>
-        <nav className="flex flex-col space-y-6 items-center mt-8">
+        {/* Close button in mobile menu */}
+        <div className="flex justify-end p-4">
+          <button 
+            className="text-gray-700 p-2 focus:outline-none"
+            onClick={toggleMenu}
+            aria-label="Close menu"
+          >
+            <X size={24} />
+          </button>
+        </div>
+        
+        <nav className="flex flex-col space-y-6 items-center mt-4">
           <Link 
             to="/" 
             className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
