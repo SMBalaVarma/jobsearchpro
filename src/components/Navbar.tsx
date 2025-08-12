@@ -57,28 +57,18 @@ const Navbar = () => {
           }}
           aria-label="JobSearch Pro"
         >
-          <div className="text-lg sm:text-xl font-display font-bold text-pulse-600">Jobard.de</div>
+          <div className="text-xl font-display font-bold text-pulse-600">Jobard.de</div>
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8">
-          <Link to="/" className={cn("nav-link text-sm xl:text-base", window.location.pathname === "/" && "text-pulse-600 font-semibold")}>Startseite</Link>
-          <Link to="/browse-jobs" className={cn("nav-link text-sm xl:text-base", window.location.pathname === "/browse-jobs" && "text-pulse-600 font-semibold")}>Jobs Finden</Link>
-          <Link to="/companies" className={cn("nav-link text-sm xl:text-base", window.location.pathname === "/companies" && "text-pulse-600 font-semibold")}>Unternehmen</Link>
-          <Link to="/resources" className={cn("nav-link text-sm xl:text-base", window.location.pathname === "/resources" && "text-pulse-600 font-semibold")}>Ressourcen</Link>
-          <div className="flex items-center space-x-3 xl:space-x-4 ml-3 xl:ml-4">
-            <Link to="/sign-in" className="text-gray-700 hover:text-pulse-500 font-medium text-sm xl:text-base">Anmelden</Link>
-            <Link to="/post-job" className="bg-pulse-500 hover:bg-pulse-600 text-white px-3 xl:px-4 py-2 rounded-full font-medium transition-colors text-sm xl:text-base">Job Inserieren</Link>
-          </div>
-        </nav>
-
-        {/* Tablet Navigation */}
-        <nav className="hidden md:flex lg:hidden items-center space-x-4">
-          <Link to="/browse-jobs" className={cn("nav-link text-sm", window.location.pathname === "/browse-jobs" && "text-pulse-600 font-semibold")}>Jobs</Link>
-          <Link to="/companies" className={cn("nav-link text-sm", window.location.pathname === "/companies" && "text-pulse-600 font-semibold")}>Firmen</Link>
-          <div className="flex items-center space-x-2">
-            <Link to="/sign-in" className="text-gray-700 hover:text-pulse-500 font-medium text-sm">Login</Link>
-            <Link to="/post-job" className="bg-pulse-500 hover:bg-pulse-600 text-white px-3 py-1.5 rounded-full font-medium transition-colors text-sm">Job +</Link>
+        <nav className="hidden md:flex items-center space-x-8">
+          <Link to="/" className={cn("nav-link", window.location.pathname === "/" && "text-pulse-600 font-semibold")}>Startseite</Link>
+          <Link to="/browse-jobs" className={cn("nav-link", window.location.pathname === "/browse-jobs" && "text-pulse-600 font-semibold")}>Jobs Finden</Link>
+          <Link to="/companies" className={cn("nav-link", window.location.pathname === "/companies" && "text-pulse-600 font-semibold")}>Unternehmen</Link>
+          <Link to="/resources" className={cn("nav-link", window.location.pathname === "/resources" && "text-pulse-600 font-semibold")}>Ressourcen</Link>
+          <div className="flex items-center space-x-4 ml-4">
+            <Link to="/sign-in" className="text-gray-700 hover:text-pulse-500 font-medium">Anmelden</Link>
+            <Link to="/post-job" className="bg-pulse-500 hover:bg-pulse-600 text-white px-4 py-2 rounded-full font-medium transition-colors">Job Inserieren</Link>
           </div>
         </nav>
 
