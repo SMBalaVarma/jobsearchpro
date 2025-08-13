@@ -84,7 +84,7 @@ const Navbar = () => {
 
       {/* Mobile Navigation - improved for better touch experience */}
       <div className={cn(
-        "fixed inset-0 z-50 bg-background/95 backdrop-blur-lg border-r border-border/20 flex flex-col md:hidden transition-all duration-300 ease-in-out shadow-lg",
+        "fixed inset-0 z-50 bg-white/90 backdrop-blur-lg flex flex-col md:hidden transition-all duration-300 ease-in-out",
         isMenuOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full pointer-events-none"
       )}>
         {/* Close button in mobile menu */}
