@@ -1,5 +1,6 @@
 import React from "react";
 import { ArrowRight, Star, Users, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 import companyShowcase from "@/assets/company-showcase.webp";
 import techCorpLogo from "@/assets/logos/techcorp-logo.webp";
 import innovateCoLogo from "@/assets/logos/innovateco-logo.webp";
@@ -19,7 +20,8 @@ const CompanyShowcase = () => {
       location: "Berlin, Deutschland",
       openJobs: 45,
       benefits: ["Remote Work", "Tolle Benefits", "Aktienoptionen"],
-      color: "from-blue-500 to-purple-600"
+      color: "from-blue-500 to-purple-600",
+      link: "/company/techcorp"
     },
     {
       name: "InnovateCo",
@@ -30,7 +32,8 @@ const CompanyShowcase = () => {
       location: "München, Deutschland",
       openJobs: 23,
       benefits: ["Flexible Arbeitszeiten", "Weiterbildungsbudget", "Krankenversicherung"],
-      color: "from-green-500 to-teal-600"
+      color: "from-green-500 to-teal-600",
+      link: "/company/innovateco"
     },
     {
       name: "DesignStudio",
@@ -41,7 +44,8 @@ const CompanyShowcase = () => {
       location: "Hamburg, Deutschland",
       openJobs: 12,
       benefits: ["Kreative Freiheit", "Remote First", "Unbegrenzter Urlaub"],
-      color: "from-pink-500 to-red-600"
+      color: "from-pink-500 to-red-600",
+      link: "/company/designstudio"
     },
     {
       name: "DataFlow",
@@ -52,7 +56,8 @@ const CompanyShowcase = () => {
       location: "Frankfurt, Deutschland",
       openJobs: 18,
       benefits: ["Work-Life-Balance", "Wachstumsmöglichkeiten", "Wettbewerbsfähiges Gehalt"],
-      color: "from-yellow-500 to-orange-600"
+      color: "from-yellow-500 to-orange-600",
+      link: "/company/dataflow"
     },
     {
       name: "GrowthLabs",
@@ -63,7 +68,8 @@ const CompanyShowcase = () => {
       location: "Köln, Deutschland",
       openJobs: 15,
       benefits: ["Berufliche Entwicklung", "Team Events", "Flexibler Urlaub"],
-      color: "from-indigo-500 to-blue-600"
+      color: "from-indigo-500 to-blue-600",
+      link: "/company/growthlabs"
     },
     {
       name: "CloudTech",
@@ -74,7 +80,8 @@ const CompanyShowcase = () => {
       location: "Stuttgart, Deutschland",
       openJobs: 34,
       benefits: ["Aktienpaket", "Remote Work", "Lernen & Entwicklung"],
-      color: "from-teal-500 to-cyan-600"
+      color: "from-teal-500 to-cyan-600",
+      link: "/company/cloudtech"
     }
   ];
 
@@ -164,11 +171,14 @@ const CompanyShowcase = () => {
                   </div>
 
                   <div className="flex items-center justify-between">
-                    <button className="text-pulse-600 hover:text-pulse-700 font-medium text-xs sm:text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+                    <Link 
+                      to={company.link}
+                      className="text-pulse-600 hover:text-pulse-700 font-medium text-xs sm:text-sm flex items-center gap-1 group-hover:gap-2 transition-all"
+                    >
                       <span className="hidden sm:inline">Jobs Anzeigen</span>
                       <span className="sm:hidden">Jobs</span>
                       <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4 transition-transform group-hover:translate-x-1" />
-                    </button>
+                    </Link>
                     
                     <div className={`w-6 sm:w-8 h-1 bg-gradient-to-r ${company.color} rounded-full`}></div>
                   </div>
@@ -180,9 +190,12 @@ const CompanyShowcase = () => {
           </div>
 
           <div className="text-center mt-8 sm:mt-12">
-            <button className="bg-white border border-pulse-500 text-pulse-500 hover:bg-pulse-500 hover:text-white px-8 py-3 rounded-lg font-medium transition-all duration-300">
+            <Link 
+              to="/companies"
+              className="bg-white border border-pulse-500 text-pulse-500 hover:bg-pulse-500 hover:text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 inline-block"
+            >
               Alle Unternehmen Anzeigen
-            </button>
+            </Link>
           </div>
         </div>
       </div>

@@ -22,6 +22,12 @@ import Education from "./pages/Education";
 import CustomerService from "./pages/CustomerService";
 import HumanResources from "./pages/HumanResources";
 import NotFound from "./pages/NotFound";
+import TechCorp from "./pages/company/TechCorp";
+import InnovateCo from "./pages/company/InnovateCo";
+import DesignStudio from "./pages/company/DesignStudio";
+import DataFlow from "./pages/company/DataFlow";
+import GrowthLabs from "./pages/company/GrowthLabs";
+import CloudTech from "./pages/company/CloudTech";
 
 const queryClient = new QueryClient();
 
@@ -49,6 +55,12 @@ const App = () => (
           <Route path="/education" element={<Education />} />
           <Route path="/customer-service" element={<CustomerService />} />
           <Route path="/human-resources" element={<HumanResources />} />
+          <Route path="/company/techcorp" element={<TechCorp />} />
+          <Route path="/company/innovateco" element={<InnovateCo />} />
+          <Route path="/company/designstudio" element={<DesignStudio />} />
+          <Route path="/company/dataflow" element={<DataFlow />} />
+          <Route path="/company/growthlabs" element={<GrowthLabs />} />
+          <Route path="/company/cloudtech" element={<CloudTech />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
