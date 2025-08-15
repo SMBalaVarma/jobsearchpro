@@ -36,49 +36,56 @@ const JobCategories = () => {
       description: "Medizin, Pflege und Gesundheitsverwaltung",
       jobCount: "1,923",
       icon: "🏥",
-      color: "from-green-500 to-teal-600"
+      color: "from-green-500 to-teal-600",
+      link: "/healthcare"
     },
     {
       title: "Finanzen",
       description: "Banking, Buchhaltung und Finanzdienstleistungen",
       jobCount: "1,456",
       icon: "💰",
-      color: "from-yellow-500 to-orange-600"
+      color: "from-yellow-500 to-orange-600",
+      link: "/finance"
     },
     {
       title: "Marketing",
       description: "Digitales Marketing, Markenmanagement und Werbung",
       jobCount: "1,234",
       icon: "📊",
-      color: "from-pink-500 to-red-600"
+      color: "from-pink-500 to-red-600",
+      link: "/marketing"
     },
     {
       title: "Vertrieb",
       description: "Innendienst, Geschäftsentwicklung und Kundenbetreuung",
       jobCount: "1,098",
       icon: "🛍️",
-      color: "from-indigo-500 to-blue-600"
+      color: "from-indigo-500 to-blue-600",
+      link: "/sales"
     },
     {
       title: "Bildung",
       description: "Lehre, Ausbildung und Bildungsverwaltung",
       jobCount: "876",
       icon: "📚",
-      color: "from-purple-500 to-pink-600"
+      color: "from-purple-500 to-pink-600",
+      link: "/education"
     },
     {
       title: "Kundendienst",
       description: "Support, Betreuung und Kundenerfahrung",
       jobCount: "743",
       icon: "🎧",
-      color: "from-teal-500 to-cyan-600"
+      color: "from-teal-500 to-cyan-600",
+      link: "/customer-service"
     },
     {
       title: "Personalwesen",
       description: "Recruiting, Talentmanagement und HR-Operationen",
       jobCount: "564",
       icon: "👥",
-      color: "from-orange-500 to-red-600"
+      color: "from-orange-500 to-red-600",
+      link: "/human-resources"
     }
   ];
 
