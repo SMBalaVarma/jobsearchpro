@@ -11,6 +11,9 @@ import Resources from "./pages/Resources";
 import SignIn from "./pages/SignIn";
 import PostJob from "./pages/PostJob";
 import JobDetail from "./pages/JobDetail";
+import Technology from "./pages/Technology";
+import SoftwareDevelopment from "./pages/SoftwareDevelopment";
+import ITEngineering from "./pages/ITEngineering";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -29,6 +32,9 @@ const App = () => (
           <Route path="/sign-in" element={<SignIn />} />
           <Route path="/post-job" element={<PostJob />} />
           <Route path="/job/:jobId" element={<JobDetail />} />
+          <Route path="/technology" element={<Technology />} />
+          <Route path="/software-development" element={<SoftwareDevelopment />} />
+          <Route path="/it-engineering" element={<ITEngineering />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

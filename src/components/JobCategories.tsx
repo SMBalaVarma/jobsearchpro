@@ -1,15 +1,35 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import jobCategoriesIllustration from "@/assets/job-categories.webp";
 
 const JobCategories = () => {
+  const navigate = useNavigate();
+  
   const categories = [
     {
       title: "Technologie",
       description: "Softwareentwicklung, IT und Ingenieurwesen",
       jobCount: "2,847",
       icon: "💻",
-      color: "from-blue-500 to-purple-600"
+      color: "from-blue-500 to-purple-600",
+      link: "/technology"
+    },
+    {
+      title: "Softwareentwicklung",
+      description: "Frontend, Backend und Full-Stack Development", 
+      jobCount: "1,542",
+      icon: "⚡",
+      color: "from-cyan-500 to-blue-600",
+      link: "/software-development"
+    },
+    {
+      title: "IT und Ingenieurwesen", 
+      description: "Systemadministration, Netzwerk und Infrastructure",
+      jobCount: "1,305",
+      icon: "🛠️",
+      color: "from-emerald-500 to-green-600",
+      link: "/it-engineering"
     },
     {
       title: "Gesundheitswesen",
@@ -59,13 +79,6 @@ const JobCategories = () => {
       jobCount: "564",
       icon: "👥",
       color: "from-orange-500 to-red-600"
-    },
-    {
-      title: "Operations",
-      description: "Projektmanagement, Logistik und Geschäftsabläufe",
-      jobCount: "487",
-      icon: "⚙️",
-      color: "from-gray-500 to-gray-700"
     }
   ];
 
@@ -100,6 +113,7 @@ const JobCategories = () => {
               <div
                 key={category.title}
                 className="group bg-white rounded-xl shadow-elegant hover:shadow-elegant-hover transition-all duration-300 hover:translate-y-[-4px] overflow-hidden cursor-pointer"
+                onClick={() => category.link && navigate(category.link)}
               >
                 <div className="p-4 sm:p-6">
                   <div className="flex items-center justify-between mb-3 sm:mb-4">
