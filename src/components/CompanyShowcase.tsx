@@ -3,11 +3,27 @@ import { ArrowRight, Star, Users, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 import companyShowcase from "@/assets/company-showcase.webp";
 import companiesData from "@/data/companies.json";
+import techCorpLogo from "@/assets/logos/techcorp-logo.webp";
+import innovateCoLogo from "@/assets/logos/innovateco-logo.webp";
+import designStudioLogo from "@/assets/logos/designstudio-logo.webp";
+import dataFlowLogo from "@/assets/logos/dataflow-logo.webp";
+import growthLabsLogo from "@/assets/logos/growthlabs-logo.webp";
+import cloudTechLogo from "@/assets/logos/cloudtech-logo.webp";
 
 const CompanyShowcase = () => {
+  const logoMap = {
+    techcorp: techCorpLogo,
+    innovateco: innovateCoLogo,
+    designstudio: designStudioLogo,
+    dataflow: dataFlowLogo,
+    growthlabs: growthLabsLogo,
+    cloudtech: cloudTechLogo
+  };
+
   const companies = companiesData.map(company => ({
+    id: company.id,
     name: company.name,
-    logo: company.logo,
+    logo: logoMap[company.id as keyof typeof logoMap],
     description: company.description,
     rating: company.rating,
     employees: company.employees,
@@ -21,7 +37,7 @@ const CompanyShowcase = () => {
   function getCompanyColor(id: string) {
     const colors = {
       techcorp: "from-blue-500 to-purple-600",
-      innovateco: "from-green-500 to-teal-600",
+      innovateco: "from-green-500 to-teal-600", 
       designstudio: "from-pink-500 to-red-600",
       dataflow: "from-yellow-500 to-orange-600",
       growthlabs: "from-indigo-500 to-blue-600",
@@ -59,7 +75,7 @@ const CompanyShowcase = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {companies.map((company, index) => (
               <div
-                key={company.name}
+                key={company.id}
                 className="group bg-white rounded-xl shadow-elegant hover:shadow-elegant-hover transition-all duration-300 hover:translate-y-[-4px] overflow-hidden"
               >
                 <div className="p-4 sm:p-6">
