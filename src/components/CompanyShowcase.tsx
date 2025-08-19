@@ -2,88 +2,33 @@ import React from "react";
 import { ArrowRight, Star, Users, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 import companyShowcase from "@/assets/company-showcase.webp";
-import techCorpLogo from "@/assets/logos/techcorp-logo.webp";
-import innovateCoLogo from "@/assets/logos/innovateco-logo.webp";
-import designStudioLogo from "@/assets/logos/designstudio-logo.webp";
-import dataFlowLogo from "@/assets/logos/dataflow-logo.webp";
-import growthLabsLogo from "@/assets/logos/growthlabs-logo.webp";
-import cloudTechLogo from "@/assets/logos/cloudtech-logo.webp";
+import companiesData from "@/data/companies.json";
 
 const CompanyShowcase = () => {
-  const companies = [
-    {
-      name: "TechCorp",
-      logo: techCorpLogo,
-      description: "Führendes Technologieunternehmen mit Fokus auf Innovation und modernste Lösungen.",
-      rating: 4.8,
-      employees: "10,000+",
-      location: "Berlin, Deutschland",
-      openJobs: 45,
-      benefits: ["Remote Work", "Tolle Benefits", "Aktienoptionen"],
-      color: "from-blue-500 to-purple-600",
-      link: "/company/techcorp"
-    },
-    {
-      name: "InnovateCo",
-      logo: innovateCoLogo,
-      description: "Schnell wachsendes Startup, das die Art revolutioniert, wie Menschen arbeiten und zusammenarbeiten.",
-      rating: 4.6,
-      employees: "500-1000",
-      location: "München, Deutschland",
-      openJobs: 23,
-      benefits: ["Flexible Arbeitszeiten", "Weiterbildungsbudget", "Krankenversicherung"],
-      color: "from-green-500 to-teal-600",
-      link: "/company/innovateco"
-    },
-    {
-      name: "DesignStudio",
-      logo: designStudioLogo,
-      description: "Kreativagentur spezialisiert auf digitale Erlebnisse und Markendesign.",
-      rating: 4.7,
-      employees: "50-100",
-      location: "Hamburg, Deutschland",
-      openJobs: 12,
-      benefits: ["Kreative Freiheit", "Remote First", "Unbegrenzter Urlaub"],
-      color: "from-pink-500 to-red-600",
-      link: "/company/designstudio"
-    },
-    {
-      name: "DataFlow",
-      logo: dataFlowLogo,
-      description: "Datenanalyseplattform, die Unternehmen bei datengesteuerten Entscheidungen hilft.",
-      rating: 4.9,
-      employees: "200-500",
-      location: "Frankfurt, Deutschland",
-      openJobs: 18,
-      benefits: ["Work-Life-Balance", "Wachstumsmöglichkeiten", "Wettbewerbsfähiges Gehalt"],
-      color: "from-yellow-500 to-orange-600",
-      link: "/company/dataflow"
-    },
-    {
-      name: "GrowthLabs",
-      logo: growthLabsLogo,
-      description: "Marketing-Technologieunternehmen mit Fokus auf Unternehmenswachstum.",
-      rating: 4.5,
-      employees: "100-200",
-      location: "Köln, Deutschland",
-      openJobs: 15,
-      benefits: ["Berufliche Entwicklung", "Team Events", "Flexibler Urlaub"],
-      color: "from-indigo-500 to-blue-600",
-      link: "/company/growthlabs"
-    },
-    {
-      name: "CloudTech",
-      logo: cloudTechLogo,
-      description: "Cloud-Infrastrukturanbieter für Unternehmenskunden weltweit.",
-      rating: 4.8,
-      employees: "1000-5000",
-      location: "Stuttgart, Deutschland",
-      openJobs: 34,
-      benefits: ["Aktienpaket", "Remote Work", "Lernen & Entwicklung"],
-      color: "from-teal-500 to-cyan-600",
-      link: "/company/cloudtech"
-    }
-  ];
+  const companies = companiesData.map(company => ({
+    name: company.name,
+    logo: company.logo,
+    description: company.description,
+    rating: company.rating,
+    employees: company.employees,
+    location: company.location,
+    openJobs: company.openJobs,
+    benefits: company.benefits.slice(0, 3),
+    color: getCompanyColor(company.id),
+    link: `/company/${company.id}`
+  }));
+
+  function getCompanyColor(id: string) {
+    const colors = {
+      techcorp: "from-blue-500 to-purple-600",
+      innovateco: "from-green-500 to-teal-600",
+      designstudio: "from-pink-500 to-red-600",
+      dataflow: "from-yellow-500 to-orange-600",
+      growthlabs: "from-indigo-500 to-blue-600",
+      cloudtech: "from-teal-500 to-cyan-600"
+    };
+    return colors[id as keyof typeof colors] || "from-gray-500 to-gray-600";
+  }
 
   return (
     <section className="py-12 sm:py-16 bg-gray-50" id="company-showcase">
